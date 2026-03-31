@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html class="light" lang="it">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary-dim": "#644c00",
+            "error-container": "#f74b6d",
+            "surface-container": "#eae7e7",
+            "surface-bright": "#f9f6f5",
+            "primary-fixed": "#ff7576",
+            "on-secondary": "#fff0e7",
+            "on-tertiary-fixed": "#483500",
+            "secondary-fixed": "#ffc69d",
+            "surface-container-highest": "#dfdcdc",
+            "surface-dim": "#d6d4d3",
+            "on-surface": "#2f2f2e",
+            "on-secondary-fixed-variant": "#7d4104",
+            "surface-tint": "#b71029",
+            "surface-container-low": "#f3f0ef",
+            "background": "#f9f6f5",
+            "on-primary-container": "#4e000a",
+            "on-secondary-fixed": "#542900",
+            "primary-fixed-dim": "#ff595f",
+            "outline-variant": "#afadac",
+            "inverse-on-surface": "#9e9c9c",
+            "on-error": "#ffefef",
+            "surface-container-high": "#e4e2e1",
+            "on-background": "#2f2f2e",
+            "secondary-dim": "#7b4003",
+            "error": "#b41340",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed-variant": "#60000f",
+            "primary-dim": "#a30021",
+            "on-tertiary-fixed-variant": "#6a5100",
+            "on-surface-variant": "#5c5b5b",
+            "on-secondary-container": "#703900",
+            "inverse-primary": "#ff525a",
+            "tertiary-fixed": "#f9d377",
+            "on-primary-fixed": "#000000",
+            "on-primary": "#ffefee",
+            "on-error-container": "#510017",
+            "on-tertiary": "#fff1d8",
+            "tertiary-fixed-dim": "#eac56b",
+            "inverse-surface": "#0e0e0e",
+            "surface": "#f9f6f5",
+            "tertiary-container": "#f9d377",
+            "tertiary": "#eab308",
+            "secondary-container": "#ffc69d",
+            "on-tertiary-container": "#5f4800",
+            "primary-container": "#ff7576",
+            "outline": "#787676",
+            "secondary": "#475569",
+            "error-dim": "#a70138",
+            "primary": "#b71029",
+            "secondary-fixed-dim": "#ffb379",
+            "surface-variant": "#dfdcdc"
+          },
+          fontFamily: {
+            "headline": ["Epilogue"],
+            "body": ["Work Sans"],
+            "label": ["Space Grotesk"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glass-nav {
+      background: rgba(249, 246, 245, 0.8);
+      backdrop-filter: blur(12px);
+    }
+    
+    .product-shadow {
+      box-shadow: 0 30px 100px -20px rgba(0,0,0,0.12);
+    }
+
+    body {
+       overflow-x: hidden;
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+  <!-- TopAppBar -->
+  <nav class="fixed top-0 w-full z-[200] bg-[#f9f6f5]/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+    <div class="flex justify-between items-center px-4 md:px-8 py-3 md:py-4 max-w-full mx-auto">
+      <a href="Gruppo_Bressi_Home.html" class="flex items-center gap-2 md:gap-3 hover:opacity-80 transition-opacity">
+        <img src="logo-drinkclear.png" alt="Drinkclear Logo" class="h-8 md:h-10 w-auto object-contain" />
+        <div
+          class="font-['Epilogue'] text-lg md:text-3xl font-black text-[#b71029] dark:text-[#ff7576] tracking-tighter whitespace-nowrap">
+          Gruppo Bressi
+        </div>
+      </a>
+
+      <!-- Hamburger Button (Mobile) -->
+      <button id="mobile-menu-btn" class="md:hidden text-on-surface p-2 z-[110] relative focus:outline-none">
+        <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+
+      <div class="hidden md:flex items-center space-x-8 lg:space-x-12 relative md:mr-10 lg:mr-16">
+        <a class="font-['Epilogue'] font-bold uppercase tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-[#b71029] transition-colors"
+          href="Gruppo_Bressi_Home.html">Home</a>
+
+        <!-- Dropdown Prodotti -->
+        <div class="group relative flex items-center h-full cursor-pointer">
+          <a href="prodotti.html"
+            class="font-['Epilogue'] font-bold uppercase tracking-tight text-sm text-[#b71029] dark:text-[#ff7576] transition-colors flex items-center gap-1 border-b-2 border-[#b71029] pb-1">
+            Prodotti
+            <span class="material-symbols-outlined text-sm font-bold">expand_more</span>
+          </a>
+          <div
+            class="absolute top-full right-0 w-[700px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] pt-6">
+            <div
+              class="bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100 dark:border-gray-800 p-6 flex gap-8 text-left">
+              <!-- Polveri Alimentari -->
+              <a href="prodotti.html#polveri"
+                class="flex-1 space-y-4 p-4 -m-4 hover:bg-primary/5 dark:hover:bg-primary/10 rounded-xl transition-all group/item block">
+                <div class="relative overflow-hidden rounded-2xl h-36">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVdKtS4yKf9Y9ue4pdXDpRUXuJb9NtLqtm6sWB7COm4qR5F-HjNqxaytCtg5TgFSAYwau2Ok8bT9JDN3odnIiVmtq49ikBiYk4dTdojwXWrhDvL7KMguvVQYXlMwZR_-RFTc7uRY4ehJs1aaZ7gpv6McGakUCJIXeEOp_3ibc4sUuzTrOOtWU6oSV0Wf1x0dQzoei10be9RzAEiAztd81fWPWyvNU-jZxTtHXMIkYHT73ZpV400WN0aKKwPBZncE97cvTtpBJo2tM"
+                    class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-500"
+                    alt="Polveri Alimentari" />
+                </div>
+                <h3 class="font-headline font-bold text-xl text-on-surface">Polveri Alimentari</h3>
+                <div class="grid grid-cols-2 gap-y-3 font-body text-[14px] text-[#787676]">
+                  <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-[#f0a6b5]"></div>Farine
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-[#f0a6b5]"></div>Estratti
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-[#f0a6b5]"></div>Spezie
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-[#f0a6b5]"></div>Additivi
+                  </div>
+                </div>
+              </a>
+
+              <div class="w-px bg-gray-100 dark:bg-gray-800 my-4"></div>
+
+              <!-- Macchinari Industriali -->
+              <a href="prodotti.html#macchinari"
+                class="flex-1 space-y-4 p-4 -m-4 hover:bg-primary/5 dark:hover:bg-primary/10 border-transparent hover:border-primary rounded-xl transition-all group/item block">
+                <div class="relative overflow-hidden rounded-2xl h-36">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsTnw0aScajJhTJc0jGGYW_hNkHjiYP5Mx82zduF1SLIFeVRrsO6_Fs-IgXL1K1lqgRzEQbNqHuOf1BR9SfUsudiUFDBxaMxGnFcu3Jxw8f0Z7eHRBDkpn3P7q8bFpP3Xop8pt6YK34O4QcyJ8UzPdaVzDZpFUWpPTMjSjRb0eJy2NuoK3Hdz7pBAH77FykWiDRDH6qlY5shNz-X7-Oa33gvhZ35z-TS0LN8wT1q6Z9FL3nvu_DZzCO9Jj76zX3wL8WL-EhfEmgZM"
+                    class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-500"
+                    alt="Macchinari Industriali" />
+                </div>
+                <h3 class="font-headline font-bold text-xl text-on-surface">Macchinari Industriali</h3>
+                <div class="grid grid-cols-2 gap-y-3 font-body text-[14px] text-[#787676]">
+                  <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-[#c3b6a6]"></div>Miscelatori
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-[#c3b6a6]"></div>Confezionamento
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-[#c3b6a6]"></div>Essiccatori
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-[#c3b6a6]"></div>Sistemi Pesatura
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a class="font-['Epilogue'] font-bold uppercase tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-[#b71029] transition-colors"
+          href="contatti.html">Contatti</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu"
+    class="fixed inset-0 z-[100] bg-surface/98 backdrop-blur-2xl flex flex-col transition-all duration-500 transform translate-y-full opacity-0 invisible overflow-y-auto">
+    <div class="min-h-full flex flex-col items-center justify-center py-16 px-6">
+      <div class="flex flex-col items-center gap-8 w-full max-w-sm text-center">
+        <a href="Gruppo_Bressi_Home.html"
+          class="font-headline font-black text-2xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase whitespace-normal leading-tight">Home</a>
+        <div class="w-12 h-px bg-outline-variant/30"></div>
+        <div class="flex flex-col items-center gap-4 w-full">
+          <span class="font-label text-[10px] font-bold text-on-surface/40 tracking-[0.3em] uppercase">Prodotti</span>
+          <a href="prodotti.html#polveri"
+            class="font-headline font-black text-xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase whitespace-normal leading-tight">Polveri Alimentari</a>
+          <a href="prodotti.html#macchinari"
+            class="font-headline font-black text-xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase whitespace-normal leading-tight">Macchinari Industriali</a>
+        </div>
+        <div class="w-12 h-px bg-outline-variant/30"></div>
+        <a href="contatti.html"
+          class="font-headline font-black text-2xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase whitespace-normal leading-tight">Contatti</a>
+        <div class="w-full h-px bg-outline-variant/10 mt-4"></div>
+        <div class="flex flex-col items-center gap-6 pt-4">
+          <div class="flex gap-8">
+            <span
+              class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors text-2xl">language</span>
+            <span
+              class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors text-2xl">share</span>
+            <span
+              class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors text-2xl">mail</span>
+          </div>
+          <p class="font-body text-[10px] text-outline font-medium tracking-widest uppercase">© 2024 Gruppo Bressi</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="pt-24 md:pt-32 pb-16">
+    <div class="container mx-auto px-4 md:px-8 max-w-screen-2xl">
+      <!-- Breadcrumbs -->
+      <nav class="flex mb-8 text-sm font-label text-outline uppercase tracking-wider" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+          <li><a href="Gruppo_Bressi_Home.html" class="hover:text-primary transition-colors">Home</a></li>
+          <li><span class="material-symbols-outlined text-xs">chevron_right</span></li>
+          <li><a href="prodotti.html" class="hover:text-primary transition-colors">Prodotti</a></li>
+          <li><span class="material-symbols-outlined text-xs">chevron_right</span></li>
+          <li><a href="prodotti.html#macchinari" class="hover:text-primary transition-colors">Macchinari</a></li>
+          <li><span class="material-symbols-outlined text-xs">chevron_right</span></li>
+          <li class="text-on-surface font-bold">Miscelatore Serie X</li>
+        </ol>
+      </nav>
+
+      <!-- Main Product Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-20">
+        <!-- Product Image Gallery -->
+        <div class="space-y-6">
+          <div class="relative aspect-square rounded-3xl overflow-hidden bg-surface-container-low product-shadow group">
+             <img src="https://s7g10.scene7.com/is/image/tetrapak/powder-scoup-of-powder?wid=384&hei=216&fmt=jpg&resMode=sharp2&qlt=85,0&op_usm=1.75,0.3,2,0" 
+                  alt="Miscelatore Industriale Alto Rendimento" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+             <div class="absolute top-6 right-6 flex flex-col gap-3">
+                <button class="w-12 h-12 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary shadow-lg transition-all group/info">
+                    <span class="material-symbols-outlined">zoom_in</span>
+                </button>
+             </div>
+          </div>
+          <!-- Thumbnails -->
+          <div class="grid grid-cols-4 gap-4">
+             <div class="aspect-square rounded-xl overflow-hidden border-2 border-primary cursor-pointer">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsTnw0aScajJhTJc0jGGYW_hNkHjiYP5Mx82zduF1SLIFeVRrsO6_Fs-IgXL1K1lqgRzEQbNqHuOf1BR9SfUsudiUFDBxaMxGnFcu3Jxw8f0Z7eHRBDkpn3P7q8bFpP3Xop8pt6YK34O4QcyJ8UzPdaVzDZpFUWpPTMjSjRb0eJy2NuoK3Hdz7pBAH77FykWiDRDH6qlY5shNz-X7-Oa33gvhZ35z-TS0LN8wT1q6Z9FL3nvu_DZzCO9Jj76zX3wL8WL-EhfEmgZM" class="w-full h-full object-cover">
+             </div>
+             <div class="aspect-square rounded-xl overflow-hidden border border-outline-variant/30 hover:border-primary cursor-pointer transition-colors">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX-k9SlMiNS07PDu7c0OKvjjAKoWjNtbDTUdMkZ_smgT-7bj8UQZ687EKXAG0iyjOc7n72u6k_q6tQM4purAgq4ojZhSK03jJNl4zulylYnB4K2belsiDxlI-KqURJziAC1mqBoOnCznCNYLsf01J9alQRkoFolOURf72e3wULgQFzq2aFhBM7PEc4AJ0zKDPn4CGCknpJfWDd3zXisMS2uxwImAH-k3SV6gRwBzFtDxyQ-4_q1PtTfcUpMmpOSnslsXut_AGFR-U" class="w-full h-full object-cover">
+             </div>
+             <div class="aspect-square rounded-xl overflow-hidden border border-outline-variant/30 hover:border-primary cursor-pointer transition-colors">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAx9SQsBXK753c1vOuXzNrjfFnlWLdTpCRlkjExFaPAk7RGh4_8CRWuycyuMhpUsYD6dcDqnx-0CnRP9Q1SnNxtWEx2SVLT9wk1x84Ule12DhXVZBLDIDNhIWB7-vqcMXBHxKca5nlsT8jJLuHC2rVghHBeneoEmDZHOI43A6Rrbw_e7HvV47635N581XksYVwadlDJlWVeCgqTPbIctV2g9eWXpTIza61BzdA0GN4afn0kjTNXKKYziwIVRjEO2A3k3vBuOM5IY0" class="w-full h-full object-cover">
+             </div>
+             <div class="aspect-square rounded-xl overflow-hidden bg-surface-container-high flex flex-col items-center justify-center text-outline cursor-pointer border border-outline-variant/30 hover:border-primary transition-colors">
+                <span class="material-symbols-outlined">add</span>
+                <span class="text-[10px] uppercase font-bold tracking-widest mt-1">Video</span>
+             </div>
+          </div>
+        </div>
+
+        <!-- Product info section -->
+        <div class="flex flex-col pt-4">
+          <div class="mb-8">
+            <h1 class="font-headline text-4xl md:text-6xl font-black text-on-surface leading-tight tracking-tighter uppercase mb-6">
+              Miscelatore Bivo-Conico <br/><span class="text-primary text-primary">Serie-X Precision</span>
+            </h1>
+            <p class="font-body text-lg text-outline leading-relaxed max-w-xl">
+              Il Miscelatore Serie-X rappresenta lo stato dell'arte nella miscelazione di polveri e granuli sensibili. Progettato per garantire la massima omogeneità in tempi ridotti, questo sistema combina un design aerodinamico con una costruzione in acciaio inox AISI 316L elettrolucidato.
+            </p>
+          </div>
+
+          <!-- Key Highlights -->
+          <div class="grid grid-cols-2 gap-6 mb-10">
+             <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+                   <span class="material-symbols-outlined">verified</span>
+                </div>
+                <div>
+                   <h4 class="font-black text-sm uppercase tracking-tight">Precisione 99.9%</h4>
+                   <p class="text-xs text-outline mt-1 font-medium">Garanzia di omogeneità assoluta</p>
+                </div>
+             </div>
+             <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+                   <span class="material-symbols-outlined">energy_savings_leaf</span>
+                </div>
+                <div>
+                   <h4 class="font-black text-sm uppercase tracking-tight">Eco-Efficient</h4>
+                   <p class="text-xs text-outline mt-1 font-medium">Riduzione energetica del 15%</p>
+                </div>
+             </div>
+             <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+                   <span class="material-symbols-outlined">clean_hands</span>
+                </div>
+                <div>
+                   <h4 class="font-black text-sm uppercase tracking-tight">Easy Cleanup</h4>
+                   <p class="text-xs text-outline mt-1 font-medium">Design senza zone morte</p>
+                </div>
+             </div>
+             <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+                   <span class="material-symbols-outlined">settings_suggest</span>
+                </div>
+                <div>
+                   <h4 class="font-black text-sm uppercase tracking-tight">Custom Config</h4>
+                   <p class="text-xs text-outline mt-1 font-medium">Configurazioni modulari</p>
+                </div>
+             </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row gap-4">
+             <a href="contatti.html" class="flex-1 bg-primary text-on-primary h-20 rounded-xl flex items-center justify-center font-headline font-black uppercase tracking-widest hover:bg-on-primary-fixed-variant transition-colors group">
+                Richiedi Preventivo
+                <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">send</span>
+             </a>
+             <button class="flex-1 border border-outline-variant text-on-surface h-20 rounded-xl flex items-center justify-center font-headline font-black uppercase tracking-widest hover:bg-surface-container transition-colors">
+                Scarica Catalogo
+                <span class="material-symbols-outlined ml-2">download</span>
+             </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail Tabs - Integrated Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 pt-16 border-t border-outline-variant/20">
+         <div class="lg:col-span-2">
+            <h2 class="font-headline font-black text-3xl uppercase tracking-tighter mb-8 text-primary">Caratteristiche Avanzate</h2>
+            <div class="space-y-8">
+               <div>
+                  <h3 class="font-headline font-black text-xl uppercase tracking-tight mb-2">Costruzione Certificata</h3>
+                  <p class="text-outline leading-relaxed">
+                    Ogni componente a contatto con il prodotto è realizzato in acciaio AISI 316L con una rugosità superficiale inferiore a 0.4 micron, garantendo la conformità alle normative internazionali più stringenti per i settori alimentare, farma e cosmetico.
+                  </p>
+               </div>
+               <div>
+                  <h3 class="font-headline font-black text-xl uppercase tracking-tight mb-2">Sistema di Scarico Integrato</h3>
+                  <p class="text-outline leading-relaxed">
+                    Valvola a farfalla a tenuta ermetica con azionamento pneumatico o manuale, studiata per evitare fenomeni di demiscelazione durante lo scarico del prodotto.
+                  </p>
+               </div>
+               <div>
+                  <h3 class="font-headline font-black text-xl uppercase tracking-tight mb-2">Automazione Industry 4.0</h3>
+                  <p class="text-outline leading-relaxed">
+                    Predisposizione per il monitoraggio remoto dei parametri di processo e integrazione con i sistemi ERP aziendali tramite PLC Siemens o Allen Bradley.
+                  </p>
+               </div>
+            </div>
+         </div>
+
+         <div class="lg:col-span-1">
+            <h2 class="font-headline font-black text-3xl uppercase tracking-tighter mb-8 text-primary">Dati Tecnici</h2>
+            <div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/10">
+               <table class="w-full text-sm">
+                  <tbody class="divide-y divide-outline-variant/20">
+                     <tr class="py-3 flex justify-between">
+                        <td class="font-bold text-outline uppercase py-3">Capacità Utile</td>
+                        <td class="font-black py-3">250 - 5000 Litri</td>
+                     </tr>
+                     <tr class="py-3 flex justify-between">
+                        <td class="font-bold text-outline uppercase py-3">Velocità</td>
+                        <td class="font-black py-3">Variable 5-25 RPM</td>
+                     </tr>
+                     <tr class="py-3 flex justify-between">
+                        <td class="font-bold text-outline uppercase py-3">Potenza Motore</td>
+                        <td class="font-black py-3">4.5 kW - 11 kW</td>
+                     </tr>
+                     <tr class="py-3 flex justify-between">
+                        <td class="font-bold text-outline uppercase py-3">Materiale</td>
+                        <td class="font-black py-3">AISI 316L / 304</td>
+                     </tr>
+                     <tr class="py-3 flex justify-between">
+                        <td class="font-bold text-outline uppercase py-3">Finitura</td>
+                        <td class="font-black py-3">Mirror Polished</td>
+                     </tr>
+                     <tr class="py-3 flex justify-between">
+                        <td class="font-bold text-outline uppercase py-3">Standard</td>
+                        <td class="font-black py-3">ATEX / FDA</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Related Products Section -->
+  <section class="bg-surface-container-lowest py-24 mb-0">
+     <div class="container mx-auto px-4 md:px-8 max-w-screen-2xl">
+        <div class="flex justify-between items-end mb-12">
+           <div>
+              <h2 class="font-headline font-black text-4xl md:text-5xl uppercase tracking-tighter leading-none mb-2">Potrebbe Interessarti</h2>
+              <p class="text-outline font-medium">Soluzioni complementari per la tua linea produttiva</p>
+           </div>
+           <a href="prodotti.html" class="hidden md:flex items-center gap-2 font-headline font-black text-sm uppercase tracking-widest text-primary group">
+              Vedi Catalogo Completo
+              <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+           </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+           <!-- Card 1 -->
+           <div class="group relative bg-white dark:bg-[#1a1a1a] rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl border border-gray-100 dark:border-gray-800 product-card">
+              <a href="prodotto-singolo.html" class="block aspect-[3/2] overflow-hidden relative cursor-none product-image-container">
+                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX-k9SlMiNS07PDu7c0OKvjjAKoWjNtbDTUdMkZ_smgT-7bj8UQZ687EKXAG0iyjOc7n72u6k_q6tQM4purAgq4ojZhSK03jJNl4zulylYnB4K2belsiDxlI-KqURJziAC1mqBoOnCznCNYLsf01J9alQRkoFolOURf72e3wULgQFzq2aFhBM7PEc4AJ0zKDPn4CGCknpJfWDd3zXisMS2uxwImAH-k3SV6gRwBzFtDxyQ-4_q1PtTfcUpMmpOSnslsXut_AGFR-U" 
+                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                      alt="Essiccatore Statico S2" />
+              </a>
+              <div class="p-6">
+                 <span class="font-label text-xs font-bold text-secondary uppercase tracking-widest mb-2 block">Essiccazione</span>
+                 <a href="prodotto-singolo.html" class="block group-hover:text-primary transition-colors">
+                    <h3 class="font-headline text-xl font-bold mb-3 uppercase tracking-tight">Essiccatore Statico S2</h3>
+                 </a>
+                 <p class="text-on-surface-variant text-sm mb-6 leading-relaxed line-clamp-2">Ottimizzato per processi a bassa temperatura e materiali termolabili.</p>
+                 <div class="flex justify-between items-center border-t border-outline-variant/15 pt-6">
+                    <a href="prodotto-singolo.html" class="text-primary font-bold text-xs uppercase flex items-center gap-2 hover:gap-3 transition-all">
+                       Dettagli <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                 </div>
+              </div>
+           </div>
+           <!-- Card 2 -->
+           <div class="group relative bg-white dark:bg-[#1a1a1a] rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl border border-gray-100 dark:border-gray-800 product-card">
+              <a href="prodotto-singolo.html" class="block aspect-[3/2] overflow-hidden relative cursor-none product-image-container">
+                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAx9SQsBXK753c1vOuXzNrjfFnlWLdTpCRlkjExFaPAk7RGh4_8CRWuycyuMhpUsYD6dcDqnx-0CnRP9Q1SnNxtWEx2SVLT9wk1x84Ule12DhXVZBLDIDNhIWB7-vqcMXBHxKca5nlsT8jJLuHC2rVghHBeneoEmDZHOI43A6Rrbw_e7HvV47635N581XksYVwadlDJlWVeCgqTPbIctV2g9eWXpTIza61BzdA0GN4afn0kjTNXKKYziwIVRjEO2A3k3vBuOM5IY0" 
+                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                      alt="Sistema Pesatura Digital" />
+              </a>
+              <div class="p-6">
+                 <span class="font-label text-xs font-bold text-secondary uppercase tracking-widest mb-2 block">Controllo Peso</span>
+                 <a href="prodotto-singolo.html" class="block group-hover:text-primary transition-colors">
+                    <h3 class="font-headline text-xl font-bold mb-3 uppercase tracking-tight">Sistema Pesatura Digital</h3>
+                 </a>
+                 <p class="text-on-surface-variant text-sm mb-6 leading-relaxed line-clamp-2">Celle di carico ad alta precisione con display touch integrato.</p>
+                 <div class="flex justify-between items-center border-t border-outline-variant/15 pt-6">
+                    <a href="prodotto-singolo.html" class="text-primary font-bold text-xs uppercase flex items-center gap-2 hover:gap-3 transition-all">
+                       Dettagli <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                 </div>
+              </div>
+           </div>
+           <!-- Card 3 -->
+           <div class="group relative bg-white dark:bg-[#1a1a1a] rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl border border-gray-100 dark:border-gray-800 product-card">
+              <a href="prodotto-singolo.html" class="block aspect-[3/2] overflow-hidden relative cursor-none product-image-container">
+                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsTnw0aScajJhTJc0jGGYW_hNkHjiYP5Mx82zduF1SLIFeVRrsO6_Fs-IgXL1K1lqgRzEQbNqHuOf1BR9SfUsudiUFDBxaMxGnFcu3Jxw8f0Z7eHRBDkpn3P7q8bFpP3Xop8pt6YK34O4QcyJ8UzPdaVzDZpFUWpPTMjSjRb0eJy2NuoK3Hdz7pBAH77FykWiDRDH6qlY5shNz-X7-Oa33gvhZ35z-TS0LN8wT1q6Z9FL3nvu_DZzCO9Jj76zX3wL8WL-EhfEmgZM" 
+                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                      alt="Miscelatore Lab-Scale" />
+              </a>
+              <div class="p-6">
+                 <span class="font-label text-xs font-bold text-secondary uppercase tracking-widest mb-2 block">R&D Lab</span>
+                 <a href="prodotto-singolo.html" class="block group-hover:text-primary transition-colors">
+                    <h3 class="font-headline text-xl font-bold mb-3 uppercase tracking-tight">Miscelatore Lab-Scale</h3>
+                 </a>
+                 <p class="text-on-surface-variant text-sm mb-6 leading-relaxed line-clamp-2">Soluzione compatta per test di laboratorio e ricerca.</p>
+                 <div class="flex justify-between items-center border-t border-outline-variant/15 pt-6">
+                    <a href="prodotto-singolo.html" class="text-primary font-bold text-xs uppercase flex items-center gap-2 hover:gap-3 transition-all">
+                       Dettagli <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="w-full py-12 px-8 mt-auto bg-[#dfdcdc] dark:bg-slate-950 border-t border-[#afadac]/15">
+    <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <div>
+        <div class="font-['Epilogue'] font-bold text-[#b71029] text-2xl mb-4 tracking-tighter uppercase">Gruppo Bressi
+        </div>
+        <p class="font-['Work_Sans'] text-sm text-slate-600 dark:text-slate-400 max-w-md mb-6 leading-relaxed">
+          © 2024 Gruppo Bressi. Industrial Alchemy in Food Ingredients. <br />
+          Leader nella fornitura di polveri alimentari e tecnologie per l'industria del food.
+        </p>
+        <div class="flex gap-4">
+          <span
+            class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">language</span>
+          <span
+            class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">share</span>
+          <span
+            class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">mail</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-8">
+        <div class="flex flex-col gap-3">
+          <a class="text-slate-500 hover:text-[#b71029] font-['Work_Sans'] text-sm hover:underline decoration-[#b71029] underline-offset-4 transition-all"
+            href="#">Privacy Policy</a>
+          <a class="text-slate-500 hover:text-[#b71029] font-['Work_Sans'] text-sm hover:underline decoration-[#b71029] underline-offset-4 transition-all"
+            href="#">Termini e Condizioni</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <a class="text-slate-500 hover:text-[#b71029] font-['Work_Sans'] text-sm hover:underline decoration-[#b71029] underline-offset-4 transition-all"
+            href="#">Certificazioni</a>
+          <a class="text-slate-500 hover:text-[#b71029] font-['Work_Sans'] text-sm hover:underline decoration-[#b71029] underline-offset-4 transition-all"
+            href="#">Lavora con noi</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        nav.classList.add('shadow-lg');
+      } else {
+        nav.classList.remove('shadow-lg');
+      }
+    });
+
+    // Enhanced Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    
+    let isMenuOpen = false;
+
+    function toggleMobileMenu() {
+      isMenuOpen = !isMenuOpen;
+      
+      if (isMenuOpen) {
+        mobileMenu.classList.remove('translate-y-full', 'opacity-0', 'invisible');
+        mobileMenu.classList.add('translate-y-0', 'opacity-100');
+        menuIcon.innerText = 'close';
+        document.body.style.overflow = 'hidden';
+      } else {
+        mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+        mobileMenu.classList.add('translate-y-full', 'opacity-0');
+        setTimeout(() => {
+          if (!isMenuOpen) mobileMenu.classList.add('invisible');
+        }, 500);
+        menuIcon.innerText = 'menu';
+        document.body.style.overflow = '';
+      }
+    }
+
+    mobileMenuBtn?.addEventListener('click', toggleMobileMenu);
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (isMenuOpen) toggleMobileMenu();
+        });
+      });
+
+      // Custom Cursor Logic
+      const cursor = document.getElementById('custom-cursor');
+      const imageContainers = document.querySelectorAll('.product-image-container');
+
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+      });
+
+      imageContainers.forEach(container => {
+        container.addEventListener('mouseenter', () => {
+          cursor.classList.remove('opacity-0');
+          cursor.classList.add('opacity-100');
+        });
+        container.addEventListener('mouseleave', () => {
+          cursor.classList.remove('opacity-100');
+          cursor.classList.add('opacity-0');
+        });
+      });
+    </script>
+
+    <!-- Custom Floating Cursor -->
+    <div id="custom-cursor"
+      class="fixed pointer-events-none z-[100] w-16 h-16 bg-primary/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 transition-opacity duration-300 transform -translate-x-1/2 -translate-y-1/2">
+      <span class="material-symbols-outlined text-primary text-4xl font-black">add</span>
+    </div>
+  </body>
+
+</html>

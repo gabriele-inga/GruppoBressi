@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html class="light" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Space+Grotesk:wght@400;500;600&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#2f2f2e",
+              "error-dim": "#a70138",
+              "tertiary": "#eab308",
+              "on-background": "#2f2f2e",
+              "surface-container-high": "#e4e2e1",
+              "inverse-surface": "#0e0e0e",
+              "surface-container-highest": "#dfdcdc",
+              "error": "#b41340",
+              "on-primary-container": "#4e000a",
+              "surface-container": "#eae7e7",
+              "on-primary-fixed": "#000000",
+              "surface-container-low": "#f3f0ef",
+              "error-container": "#f74b6d",
+              "tertiary-fixed-dim": "#eac56b",
+              "surface-tint": "#b71029",
+              "on-secondary-container": "#703900",
+              "secondary-dim": "#7b4003",
+              "tertiary-container": "#f9d377",
+              "on-tertiary-fixed": "#483500",
+              "on-primary": "#ffefee",
+              "outline": "#787676",
+              "on-surface-variant": "#5c5b5b",
+              "on-primary-fixed-variant": "#60000f",
+              "surface": "#f9f6f5",
+              "secondary-fixed-dim": "#ffb379",
+              "inverse-on-surface": "#9e9c9c",
+              "primary-dim": "#a30021",
+              "primary-fixed": "#ff7576",
+              "on-error-container": "#510017",
+              "on-error": "#ffefef",
+              "primary": "#b71029",
+              "secondary": "#475569",
+              "inverse-primary": "#ff525a",
+              "on-tertiary-fixed-variant": "#6a5100",
+              "on-secondary-fixed": "#542900",
+              "surface-bright": "#f9f6f5",
+              "on-tertiary-container": "#5f4800",
+              "secondary-container": "#ffc69d",
+              "on-secondary-fixed-variant": "#7d4104",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#ffc69d",
+              "surface-variant": "#dfdcdc",
+              "tertiary-dim": "#644c00",
+              "surface-dim": "#d6d4d3",
+              "on-tertiary": "#fff1d8",
+              "tertiary-fixed": "#f9d377",
+              "primary-container": "#ff7576",
+              "outline-variant": "#afadac",
+              "on-secondary": "#fff0e7",
+              "background": "#f9f6f5",
+              "primary-fixed-dim": "#ff595f"
+            },
+            fontFamily: {
+              "headline": ["Epilogue"],
+              "body": ["Work Sans"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Work Sans', sans-serif;
+        background-color: #f9f6f5;
+        color: #2f2f2e;
+      }
+      .asymmetric-border {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-[200] bg-[#f9f6f5]/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-4 md:px-8 py-3 md:py-4 max-w-full mx-auto">
+<a href="Gruppo_Bressi_Home.html" class="flex items-center gap-2 md:gap-3 hover:opacity-80 transition-opacity">
+    <img src="logo-drinkclear.png" alt="Drinkclear Logo" class="h-8 md:h-10 w-auto object-contain" />
+    <div class="font-['Epilogue'] text-lg md:text-3xl font-black text-[#b71029] dark:text-[#ff7576] tracking-tighter whitespace-nowrap">
+        Gruppo Bressi
+    </div>
+</a>
+
+<!-- Hamburger Button (Mobile) -->
+<button id="mobile-menu-btn" class="md:hidden text-on-surface p-2 z-[110] relative focus:outline-none">
+  <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
+</button>
+
+<div class="hidden md:flex items-center space-x-8 lg:space-x-12 relative md:mr-10 lg:mr-16">
+<a class="font-['Epilogue'] font-bold uppercase tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-[#b71029] transition-colors" href="./Gruppo_Bressi_Home.html">Home</a>
+
+<!-- Dropdown Prodotti -->
+<div class="group relative flex items-center h-full cursor-pointer">
+    <a href="prodotti.html" class="font-['Epilogue'] font-bold uppercase tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-[#b71029] transition-colors flex items-center gap-1">
+        Prodotti
+        <span class="material-symbols-outlined text-sm font-bold">expand_more</span>
+    </a>
+    <div class="absolute top-full right-0 w-[700px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] pt-6">
+        <div class="bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100 dark:border-gray-800 p-6 flex gap-8 text-left">
+            <!-- Polveri Alimentari -->
+            <a href="prodotti.html#polveri" class="flex-1 space-y-4 p-4 -m-4 hover:bg-primary/5 dark:hover:bg-primary/10 rounded-xl transition-all group/item block">
+                <div class="relative overflow-hidden rounded-2xl h-36">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVdKtS4yKf9Y9ue4pdXDpRUXuJb9NtLqtm6sWB7COm4qR5F-HjNqxaytCtg5TgFSAYwau2Ok8bT9JDN3odnIiVmtq49ikBiYk4dTdojwXWrhDvL7KMguvVQYXlMwZR_-RFTc7uRY4ehJs1aaZ7gpv6McGakUCJIXeEOp_3ibc4sUuzTrOOtWU6oSV0Wf1x0dQzoei10be9RzAEiAztd81fWPWyvNU-jZxTtHXMIkYHT73ZpV400WN0aKKwPBZncE97cvTtpBJo2tM" class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-500" alt="Polveri Alimentari"/>
+                </div>
+                <h3 class="font-headline font-bold text-xl text-on-surface">Polveri Alimentari</h3>
+                <div class="grid grid-cols-2 gap-y-3 font-body text-[14px] text-[#787676]">
+                    <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#f0a6b5]"></div>Farine</div>
+                    <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#f0a6b5]"></div>Estratti</div>
+                    <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#f0a6b5]"></div>Spezie</div>
+                    <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#f0a6b5]"></div>Additivi</div>
+                </div>
+            </a>
+            
+            <div class="w-px bg-gray-100 dark:bg-gray-800 my-4"></div>
+
+            <!-- Macchinari Industriali -->
+            <a href="prodotti.html#macchinari" class="flex-1 space-y-4 p-4 -m-4 hover:bg-primary/5 dark:hover:bg-primary/10 rounded-xl transition-all group/item block">
+                <div class="relative overflow-hidden rounded-2xl h-36">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsTnw0aScajJhTJc0jGGYW_hNkHjiYP5Mx82zduF1SLIFeVRrsO6_Fs-IgXL1K1lqgRzEQbNqHuOf1BR9SfUsudiUFDBxaMxGnFcu3Jxw8f0Z7eHRBDkpn3P7q8bFpP3Xop8pt6YK34O4QcyJ8UzPdaVzDZpFUWpPTMjSjRb0eJy2NuoK3Hdz7pBAH77FykWiDRDH6qlY5shNz-X7-Oa33gvhZ35z-TS0LN8wT1q6Z9FL3nvu_DZzCO9Jj76zX3wL8WL-EhfEmgZM" class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-500" alt="Macchinari Industriali"/>
+                </div>
+                <h3 class="font-headline font-bold text-xl text-on-surface">Macchinari Industriali</h3>
+                <div class="grid grid-cols-2 gap-y-3 font-body text-[14px] text-[#787676]">
+                    <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#c3b6a6]"></div>Miscelatori</div>
+                    <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#c3b6a6]"></div>Confezionamento</div>
+                    <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#c3b6a6]"></div>Essiccatori</div>
+                    <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#c3b6a6]"></div>Sistemi Pesatura</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<a class="font-['Epilogue'] font-bold uppercase tracking-tight text-sm text-[#b71029] dark:text-[#ff7576] border-b-2 border-[#b71029] pb-1" href="contatti.html">Contatti</a>
+</div>
+
+
+</div>
+
+
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-surface/98 backdrop-blur-2xl flex flex-col transition-all duration-500 transform translate-y-full opacity-0 invisible overflow-y-auto">
+  <div class="min-h-full flex flex-col items-center justify-center py-16 px-6">
+    <div class="flex flex-col items-center gap-8 w-full max-w-sm text-center">
+      <a href="Gruppo_Bressi_Home.html" class="font-headline font-black text-2xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase whitespace-normal leading-tight">Home</a>
+      
+      <div class="w-12 h-px bg-outline-variant/30"></div>
+      
+      <div class="flex flex-col items-center gap-4 w-full">
+        <span class="font-label text-[10px] font-bold text-on-surface/40 tracking-[0.3em] uppercase">Prodotti</span>
+        <a href="prodotti.html#polveri" class="font-headline font-black text-xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase whitespace-normal leading-tight">Polveri Alimentari</a>
+        <a href="prodotti.html#macchinari" class="font-headline font-black text-xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase whitespace-normal leading-tight">Macchinari Industriali</a>
+      </div>
+      
+      <div class="w-12 h-px bg-outline-variant/30"></div>
+      
+      <a href="contatti.html" class="font-headline font-black text-2xl text-primary hover:scale-105 transition-transform tracking-tighter uppercase whitespace-normal leading-tight">Contatti</a>
+      
+      <div class="w-full h-px bg-outline-variant/10 mt-4"></div>
+      
+      <div class="flex flex-col items-center gap-6 pt-4">
+        <div class="flex gap-8">
+           <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors text-2xl">language</span>
+           <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors text-2xl">share</span>
+           <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors text-2xl">mail</span>
+        </div>
+        <p class="font-body text-[10px] text-outline font-medium tracking-widest uppercase">© 2024 Gruppo Bressi</p>
+      </div>
+    </div>
+  </div>
+</div>
+<main class="pt-15">
+<!-- Hero Section -->
+<section class="relative min-h-[614px] flex items-center overflow-hidden bg-surface-container-low">
+<!-- Background Image with Texture Overlay -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-10 mix-blend-multiply grayscale" data-alt="Modern industrial warehouse interior with clean lines, high ceilings, and soft natural light illuminating technical infrastructure" src="https://s7g10.scene7.com/is/image/tetrapak/powder-scoup-of-powder?wid=384&hei=216&fmt=jpg&resMode=sharp2&qlt=85,0&op_usm=1.75,0.3,2,0"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-surface via-surface/80 to-transparent"></div>
+</div>
+<div class="container mx-auto px-8 relative z-10">
+<div class="max-w-4xl">
+<h1 class="font-headline font-black text-6xl md:text-8xl text-on-surface leading-[0.9] tracking-tighter mb-8 uppercase">
+                        Mettiti in <br><span class="text-primary">Contatto</span>
+</h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed">
+                        Trasformiamo le tue visioni culinarie in realtà industriale. Collabora con i nostri esperti per sviluppare soluzioni su misura nel mondo dei semilavorati in polvere.
+                    </p>
+</div>
+</div>
+<!-- Asymmetric Decoration -->
+<div class="absolute bottom-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 translate-x-1/2 pointer-events-none"></div>
+</section>
+<!-- Contact & Info Section -->
+<section class="py-12 md:py-24 px-4 md:px-8 container mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start">
+<!-- Left Column: Forms -->
+<div class="lg:col-span-7">
+  <!-- Tab Switcher -->
+  <div class="flex flex-wrap gap-2 mb-8 bg-surface-container rounded-2xl p-1.5 w-full md:w-fit border border-outline-variant/10">
+    <button id="btn-general" class="flex-1 md:flex-none px-4 md:px-10 py-3 rounded-xl font-headline font-extrabold text-[10px] md:text-sm uppercase tracking-[0.1em] transition-all bg-primary text-on-primary shadow-xl shadow-primary/20 active:scale-95">
+      Generale
+    </button>
+    <button id="btn-technical" class="flex-1 md:flex-none px-4 md:px-10 py-3 rounded-xl font-headline font-extrabold text-[10px] md:text-sm uppercase tracking-[0.1em] transition-all text-on-surface-variant hover:bg-surface-variant/30 active:scale-95">
+      Tecnica
+    </button>
+  </div>
+  
+  <div class="relative">
+    <!-- Form 1: Informazioni Generali -->
+    <div id="form-general" class="transition-all duration-300 ease-out opacity-100 translate-y-0 relative">
+      <div class="mb-6 md:mb-10">
+        <h2 class="font-headline font-black text-2xl md:text-3xl uppercase tracking-tighter mb-2">Richiesta <span class="text-primary">Generale</span></h2>
+        <div class="h-1 w-12 md:w-16 bg-primary rounded-full mb-4 md:mb-6"></div>
+        <p class="text-on-surface-variant font-body text-base md:text-lg leading-relaxed max-w-xl">Supporto commerciale e informazioni sui nostri prodotti.</p>
+      </div>
+      <form action="#" class="space-y-4 md:space-y-8" method="POST">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+          <div class="group">
+            <label class="font-label text-[10px] md:text-xs uppercase text-outline mb-2.5 block tracking-widest group-focus-within:text-primary transition-colors" for="nome">Nome Completo</label>
+            <input class="w-full bg-surface-container-lowest border-2 border-outline-variant/20 rounded-xl focus:border-primary focus:ring-0 py-4 px-5 text-on-surface font-body transition-all placeholder:text-outline-variant/50" id="nome" name="nome" placeholder="Mario Rossi" type="text"/>
+          </div>
+          <div class="group">
+            <label class="font-label text-[10px] md:text-xs uppercase text-outline mb-2.5 block tracking-widest group-focus-within:text-primary transition-colors" for="email">Email</label>
+            <input class="w-full bg-surface-container-lowest border-2 border-outline-variant/20 rounded-xl focus:border-primary focus:ring-0 py-4 px-5 text-on-surface font-body transition-all placeholder:text-outline-variant/50" id="email" name="email" placeholder="mario.rossi@esempio.it" type="email"/>
+          </div>
+        </div>
+        <div class="group">
+          <label class="font-label text-[10px] md:text-xs uppercase text-outline mb-2.5 block tracking-widest group-focus-within:text-primary transition-colors" for="messaggio">Messaggio</label>
+          <textarea class="w-full bg-surface-container-lowest border-2 border-outline-variant/20 rounded-xl focus:border-primary focus:ring-0 py-4 px-5 text-on-surface font-body transition-all placeholder:text-outline-variant/50 resize-none" id="messaggio" name="messaggio" placeholder="Come possiamo aiutarti?" rows="5"></textarea>
+        </div>
+        <div class="pt-4">
+          <button class="bg-primary text-on-primary font-headline font-black uppercase tracking-[0.2em] text-sm px-12 py-5 rounded-full hover:bg-primary-dim transition-all shadow-2xl shadow-primary/30 active:scale-95 flex items-center gap-3" type="submit">
+            Invia Richiesta
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Form 2: Consulenza Tecnica -->
+    <div id="form-technical" class="hidden transition-all duration-300 ease-out opacity-0 translate-y-4 relative">
+      <div class="mb-6 md:mb-10">
+        <h2 class="font-headline font-black text-2xl md:text-3xl uppercase tracking-tighter mb-2">Richiesta <span class="text-secondary">Tecnica</span></h2>
+        <div class="h-1 w-12 md:w-16 bg-secondary rounded-full mb-4 md:mb-6"></div>
+        <p class="text-on-surface-variant font-body text-base md:text-lg leading-relaxed max-w-xl">Collabora con il nostro team per soluzioni su misura.</p>
+      </div>
+      <form action="#" class="space-y-4 md:space-y-6" method="POST">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div class="group">
+            <label class="font-label text-[10px] uppercase text-outline mb-2.5 block tracking-widest group-focus-within:text-secondary transition-colors" for="tech-nome">Referente Tecnico</label>
+            <input class="w-full bg-surface-container-lowest border-2 border-outline-variant/20 rounded-xl focus:border-secondary focus:ring-0 py-4 px-5 text-on-surface font-body transition-all placeholder:text-outline-variant/50" id="tech-nome" name="tech-nome" placeholder="Ing. Mario Rossi" type="text"/>
+          </div>
+          <div class="group">
+            <label class="font-label text-[10px] uppercase text-outline mb-2.5 block tracking-widest group-focus-within:text-secondary transition-colors" for="tech-azienda">Azienda</label>
+            <input class="w-full bg-surface-container-lowest border-2 border-outline-variant/20 rounded-xl focus:border-secondary focus:ring-0 py-4 px-5 text-on-surface font-body transition-all placeholder:text-outline-variant/50" id="tech-azienda" name="tech-azienda" placeholder="Ragione Sociale SPA" type="text"/>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="group">
+            <label class="font-label text-[10px] uppercase text-outline mb-2.5 block tracking-widest group-focus-within:text-secondary transition-colors" for="tech-email">Email Aziendale</label>
+            <input class="w-full bg-surface-container-lowest border-2 border-outline-variant/20 rounded-xl focus:border-secondary focus:ring-0 py-4 px-5 text-on-surface font-body transition-all placeholder:text-outline-variant/50" id="tech-email" name="tech-email" placeholder="tecnico@azienda.it" type="email"/>
+          </div>
+          <div class="group">
+            <label class="font-label text-[10px] uppercase text-outline mb-2.5 block tracking-widest group-focus-within:text-secondary transition-colors" for="tech-tel">Contatto Diretto</label>
+            <input class="w-full bg-surface-container-lowest border-2 border-outline-variant/20 rounded-xl focus:border-secondary focus:ring-0 py-4 px-5 text-on-surface font-body transition-all placeholder:text-outline-variant/50" id="tech-tel" name="tech-tel" placeholder="+39 02 ..." type="tel"/>
+          </div>
+        </div>
+        <div class="group">
+          <label class="font-label text-[10px] uppercase text-outline mb-2.5 block tracking-widest group-focus-within:text-secondary transition-colors" for="tech-progetto">Specifiche del Progetto / Sfida Tecnica</label>
+          <textarea class="w-full bg-surface-container-lowest border-2 border-outline-variant/20 rounded-xl focus:border-secondary focus:ring-0 py-4 px-5 text-on-surface font-body transition-all placeholder:text-outline-variant/50 resize-none" id="tech-progetto" name="tech-progetto" placeholder="Descrivi le criticità o il prodotto da sviluppare..." rows="5"></textarea>
+        </div>
+        <div class="pt-4">
+          <button class="bg-secondary text-on-secondary font-headline font-black uppercase tracking-[0.2em] text-sm px-12 py-5 rounded-full hover:bg-secondary-dim transition-all shadow-2xl shadow-secondary/30 active:scale-95 flex items-center gap-3" type="submit">
+            Invia Progetto Tecnico
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Right Column: Info Card -->
+<div class="lg:col-span-5">
+<div class="bg-surface-container-lowest rounded-3xl md:rounded-[4rem] p-8 md:p-12 shadow-2xl shadow-on-surface/5 border border-outline-variant/10 relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute top-0 right-0 p-8 opacity-5">
+<span class="material-symbols-outlined text-9xl">factory</span>
+</div>
+    <h3 class="font-headline font-bold text-2xl uppercase tracking-tight mb-8 text-on-surface">Sede Centrale</h3>
+    <div class="space-y-6">
+      <div class="flex items-start gap-6 group">
+        <div class="bg-primary/5 p-3 rounded-xl border border-primary/10 transition-colors group-hover:bg-primary/10">
+          <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div>
+          <h4 class="font-label text-[10px] uppercase text-outline mb-0.5 tracking-wider">Indirizzo</h4>
+          <p class="font-body text-on-surface font-semibold text-sm">Via dell'Industria 42,<br/>20121 Milano (MI)</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-6 group">
+        <div class="bg-primary/5 p-3 rounded-xl border border-primary/10 transition-colors group-hover:bg-primary/10">
+          <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div>
+          <h4 class="font-label text-[10px] uppercase text-outline mb-0.5 tracking-wider">Telefono</h4>
+          <p class="font-body text-on-surface font-semibold text-sm">+39 02 123 4567</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-6 group">
+        <div class="bg-primary/5 p-3 rounded-xl border border-primary/10 transition-colors group-hover:bg-primary/10">
+          <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div>
+          <h4 class="font-label text-[10px] uppercase text-outline mb-0.5 tracking-wider">Email</h4>
+          <p class="font-body text-on-surface font-semibold text-sm">info@gruppobressi.it</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-6 group">
+        <div class="bg-primary/5 p-3 rounded-xl border border-primary/10 transition-colors group-hover:bg-primary/10">
+          <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div>
+          <h4 class="font-label text-[10px] uppercase text-outline mb-0.5 tracking-wider">Orari Opening</h4>
+          <p class="font-body text-on-surface font-semibold text-sm">Lunedì - Venerdì: 08:30 - 18:00</p>
+        </div>
+      </div>
+    </div>
+<div class="mt-12 pt-10 border-t border-outline-variant/10">
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-highest text-on-surface hover:bg-primary hover:text-on-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-highest text-on-surface hover:bg-primary hover:text-on-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="language">language</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Google Maps -->
+<section class="w-full h-[400px] bg-surface-container-highest relative grayscale opacity-80 hover:grayscale-0 transition-all duration-700 overflow-hidden">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2685.9521536421857!2d7.6591979!3d44.9076982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47880fb89abc07c3%3A0xc0efe57fa85bc8f0!2sBressi%20Gruppo%20srl!5e1!3m2!1sit!2sit!4v1774790464109!5m2!1sit!2sit" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+</main>
+<!-- Footer -->
+<!-- Footer -->
+<footer class="w-full py-20 px-8 mt-auto bg-[#dfdcdc] dark:bg-slate-950 border-t border-[#afadac]/15">
+    <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start text-left">
+      <div>
+        <div class="font-['Epilogue'] font-bold text-[#b71029] text-2xl mb-4 tracking-tighter uppercase">Gruppo Bressi</div>
+        <p class="font-['Work_Sans'] text-sm text-slate-600 dark:text-slate-400 max-w-md mb-6 leading-relaxed">
+          © 2024 Gruppo Bressi. Industrial Alchemy in Food Ingredients. <br />
+          Leader nella fornitura di polveri alimentari e tecnologie per l'industria del food.
+        </p>
+        <div class="flex gap-4">
+          <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">language</span>
+          <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">share</span>
+          <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">mail</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-8">
+        <div class="flex flex-col gap-3">
+          <a class="text-slate-500 hover:text-[#b71029] font-['Work_Sans'] text-sm hover:underline decoration-[#b71029] underline-offset-4 transition-all" href="#">Privacy Policy</a>
+          <a class="text-slate-500 hover:text-[#b71029] font-['Work_Sans'] text-sm hover:underline decoration-[#b71029] underline-offset-4 transition-all" href="#">Termini e Condizioni</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <a class="text-slate-500 hover:text-[#b71029] font-['Work_Sans'] text-sm hover:underline decoration-[#b71029] underline-offset-4 transition-all" href="#">Certificazioni</a>
+          <a class="text-slate-500 hover:text-[#b71029] font-['Work_Sans'] text-sm hover:underline decoration-[#b71029] underline-offset-4 transition-all" href="#">Lavora con noi</a>
+        </div>
+      </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/39021234567" class="fixed bottom-8 right-8 z-[100] group flex items-center bg-primary text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:pr-8 active:scale-95" id="whatsapp-fab">
+  <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .018 5.396.015 12.03c0 2.12.555 4.189 1.609 6.044L0 24l6.117-1.605A11.758 11.758 0 0012.046 24h.005c6.636 0 12.032-5.396 12.035-12.031a11.785 11.785 0 00-3.41-8.508z"/>
+  </svg>
+  <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 font-headline font-bold uppercase tracking-[0.1em] text-sm whitespace-nowrap ml-0 group-hover:ml-4">
+    Parla con noi
+  </span>
+</a>
+
+<script>
+    // WhatsApp Floating Button Position Logic
+    const whatsappFab = document.getElementById('whatsapp-fab');
+    const footerElement = document.querySelector('footer');
+
+    const adjustFabPosition = () => {
+      if (!whatsappFab || !footerElement) return;
+      
+      const footerRect = footerElement.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      
+      // If footer is visible in viewport
+      if (footerRect.top < viewportHeight) {
+        const offset = viewportHeight - footerRect.top + 32;
+        whatsappFab.style.bottom = offset + 'px';
+      } else {
+        whatsappFab.style.bottom = '2rem';
+      }
+    };
+
+    window.addEventListener('scroll', adjustFabPosition);
+    window.addEventListener('resize', adjustFabPosition);
+
+    // Tab Switching Logic
+    const btnGeneral = document.getElementById('btn-general');
+    const btnTechnical = document.getElementById('btn-technical');
+    const formGeneral = document.getElementById('form-general');
+    const formTechnical = document.getElementById('form-technical');
+
+    const switchTab = (showGeneral) => {
+      if (showGeneral) {
+        // Show General
+        formGeneral.classList.remove('hidden');
+        setTimeout(() => {
+          formGeneral.classList.remove('opacity-0', 'translate-y-4');
+          formGeneral.classList.add('opacity-100', 'translate-y-0');
+        }, 10);
+        
+        formTechnical.classList.add('hidden', 'opacity-0', 'translate-y-4');
+        formTechnical.classList.remove('opacity-100', 'translate-y-0');
+        
+        // Update Buttons
+        btnGeneral.classList.add('bg-primary', 'text-on-primary', 'shadow-xl', 'shadow-primary/20');
+        btnGeneral.classList.remove('text-on-surface-variant', 'hover:bg-surface-variant/30');
+        btnTechnical.classList.remove('bg-secondary', 'text-on-secondary', 'shadow-xl', 'shadow-secondary/20');
+        btnTechnical.classList.add('text-on-surface-variant', 'hover:bg-surface-variant/30');
+      } else {
+        // Show Technical
+        formTechnical.classList.remove('hidden');
+        setTimeout(() => {
+          formTechnical.classList.remove('opacity-0', 'translate-y-4');
+          formTechnical.classList.add('opacity-100', 'translate-y-0');
+        }, 10);
+
+        formGeneral.classList.add('hidden', 'opacity-0', 'translate-y-4');
+        formGeneral.classList.remove('opacity-100', 'translate-y-0');
+
+        // Update Buttons
+        btnTechnical.classList.add('bg-secondary', 'text-on-secondary', 'shadow-xl', 'shadow-secondary/20');
+        btnTechnical.classList.remove('text-on-surface-variant', 'hover:bg-surface-variant/30');
+        btnGeneral.classList.remove('bg-primary', 'text-on-primary', 'shadow-xl', 'shadow-primary/20');
+        btnGeneral.classList.add('text-on-surface-variant', 'hover:bg-surface-variant/30');
+      }
+    };
+
+    btnGeneral?.addEventListener('click', () => switchTab(true));
+    btnTechnical?.addEventListener('click', () => switchTab(false));
+    window.addEventListener('resize', adjustFabPosition);
+    adjustFabPosition(); // Initial check
+
+    // Enhanced Mobile Menu Toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  
+  let isMenuOpen = false;
+
+  function toggleMobileMenu() {
+    isMenuOpen = !isMenuOpen;
+    
+    if (isMenuOpen) {
+      mobileMenu.classList.remove('translate-y-full', 'opacity-0', 'invisible');
+      mobileMenu.classList.add('translate-y-0', 'opacity-100');
+      menuIcon.innerText = 'close';
+      document.body.style.overflow = 'hidden';
+    } else {
+      mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+      mobileMenu.classList.add('translate-y-full', 'opacity-0');
+      setTimeout(() => {
+        if (!isMenuOpen) mobileMenu.classList.add('invisible');
+      }, 500);
+      menuIcon.innerText = 'menu';
+      document.body.style.overflow = '';
+    }
+  }
+
+  mobileMenuBtn?.addEventListener('click', toggleMobileMenu);
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (isMenuOpen) toggleMobileMenu();
+    });
+  });
+</script>
+</body></html>

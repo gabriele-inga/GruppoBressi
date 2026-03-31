@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Lab | Gruppo Bressi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <style>
+    :root {
+      --primary: #b71029;
+      --on-primary: #ffffff;
+      --surface: #f9f6f5;
+      --on-surface: #1a1a1a;
+      --font-headline: 'Epilogue', sans-serif;
+      --font-body: 'Work Sans', sans-serif;
+    }
+
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .preview-container {
+      background-color: var(--surface);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+    }
+
+    .preview-headline {
+      font-family: var(--font-headline);
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px border rgba(255, 255, 255, 0.1);
+    }
+
+    input[type="color"] {
+      appearance: none;
+      -webkit-appearance: none;
+      border: none;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      background: none;
+    }
+    input[type="color"]::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+    input[type="color"]::-webkit-color-swatch {
+      border: none;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body class="overflow-hidden h-screen flex">
+
+  <!-- Sidebar Controls -->
+  <aside class="w-80 h-full glass border-r border-white/10 flex flex-col z-20">
+    <div class="p-6 border-b border-white/10">
+      <div class="flex items-center gap-2 mb-1">
+        <span class="material-symbols-outlined text-primary">science</span>
+        <h1 class="font-bold text-xl tracking-tight">Theme Lab</h1>
+      </div>
+      <p class="text-[10px] uppercase tracking-[0.2em] text-white/40">Gruppo Bressi Design System</p>
+    </div>
+
+    <div class="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar">
+      <!-- Section: Colors -->
+      <section>
+        <h2 class="text-xs font-bold uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">palette</span> Colori
+        </h2>
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-medium">Primario</span>
+            <input type="color" id="color-primary" value="#b71029" oninput="updateTheme()">
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-medium">Sfondo</span>
+            <input type="color" id="color-surface" value="#f9f6f5" oninput="updateTheme()">
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-medium">Testo On-Surface</span>
+            <input type="color" id="color-on-surface" value="#1a1a1a" oninput="updateTheme()">
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Typography -->
+      <section>
+        <h2 class="text-xs font-bold uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">text_fields</span> Tipografia
+        </h2>
+        <div class="space-y-6">
+          <div>
+            <label class="text-[10px] uppercase font-bold text-white/50 mb-2 block tracking-widest">Headline Font</label>
+            <select id="font-headline" class="w-full bg-white/5 border border-white/10 rounded-lg p-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary" onchange="updateTheme()">
+              <option value="Epilogue">Epilogue (Current)</option>
+              <option value="Inter">Inter</option>
+              <option value="Montserrat">Montserrat</option>
+              <option value="Playfair Display">Playfair Display</option>
+              <option value="Outfit">Outfit</option>
+              <option value="Space Grotesk">Space Grotesk</option>
+              <option value="Syncopate">Syncopate</option>
+              <option value="Bebas Neue">Bebas Neue</option>
+              <option value="Fraunces">Fraunces</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-[10px] uppercase font-bold text-white/50 mb-2 block tracking-widest">Body Font</label>
+            <select id="font-body" class="w-full bg-white/5 border border-white/10 rounded-lg p-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary" onchange="updateTheme()">
+              <option value="Work Sans">Work Sans (Current)</option>
+              <option value="Inter">Inter</option>
+              <option value="Roboto">Roboto</option>
+              <option value="Open Sans">Open Sans</option>
+              <option value="Source Sans Pro">Source Sans Pro</option>
+              <option value="Lexend">Lexend</option>
+              <option value="Karla">Karla</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Presets -->
+      <section>
+        <h2 class="text-xs font-bold uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">auto_awesome</span> Stili Predefiniti
+        </h2>
+        <div class="grid grid-cols-2 gap-2">
+          <button onclick="applyPreset('industrial')" class="text-[10px] font-bold p-2 glass rounded-lg hover:bg-white/10 transition-colors uppercase tracking-tighter">Industrial Red</button>
+          <button onclick="applyPreset('tech')" class="text-[10px] font-bold p-2 glass rounded-lg hover:bg-white/10 transition-colors uppercase tracking-tighter">Tech Blue</button>
+          <button onclick="applyPreset('luxury')" class="text-[10px] font-bold p-2 glass rounded-lg hover:bg-white/10 transition-colors uppercase tracking-tighter">Luxury Gold</button>
+          <button onclick="applyPreset('minimal')" class="text-[10px] font-bold p-2 glass rounded-lg hover:bg-white/10 transition-colors uppercase tracking-tighter">Dark Minimal</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="p-6 border-t border-white/10">
+      <button onclick="exportCSS()" class="w-full bg-primary text-white font-bold py-3 rounded-xl hover:bg-red-700 transition-all active:scale-95 flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-lg">content_copy</span>
+        Copia CSS :root
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Preview Area -->
+  <main class="flex-1 h-full overflow-hidden flex flex-col relative bg-white">
+    <!-- Toolbar -->
+    <div class="absolute top-6 left-1/2 -translate-x-1/2 glass px-6 py-3 rounded-full flex items-center gap-8 z-30 ring-1 ring-white/10 shadow-2xl">
+      <div class="flex gap-4">
+        <button onclick="toggleDevice('mobile')" class="text-white/60 hover:text-white transition-colors"><span class="material-symbols-outlined">smartphone</span></button>
+        <button onclick="toggleDevice('tablet')" class="text-white/60 hover:text-white transition-colors"><span class="material-symbols-outlined">tablet</span></button>
+        <button onclick="toggleDevice('desktop')" class="text-white hover:text-primary transition-colors"><span class="material-symbols-outlined">desktop_windows</span></button>
+      </div>
+      <div class="h-4 w-px bg-white/20"></div>
+      <span class="text-[10px] font-bold uppercase tracking-widest text-white/80">Live Preview Engine</span>
+    </div>
+
+    <!-- The actual preview iframe-like container -->
+    <div id="preview-viewport" class="w-full h-full p-12 transition-all duration-500 overflow-y-auto bg-slate-200 flex justify-center items-start">
+      <div id="preview-content" class="w-full max-w-full bg-white shadow-2xl origin-top transition-all duration-500 preview-container min-h-full">
+        <!-- Mock Nav -->
+        <nav class="sticky top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm p-4 flex justify-between items-center border-b border-gray-100">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded bg-primary"></div>
+            <span class="preview-headline font-black text-xl tracking-tighter uppercase" style="color: var(--primary)">Gruppo Bressi</span>
+          </div>
+          <div class="flex gap-4 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+            <span>Home</span>
+            <span style="color: var(--primary)">Prodotti</span>
+            <span>Contatti</span>
+          </div>
+        </nav>
+
+        <!-- Mock Hero -->
+        <section class="py-20 px-12 border-b border-gray-100 relative overflow-hidden" style="background-color: var(--surface)">
+          <div class="relative z-10">
+            <span class="preview-headline text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block" style="color: var(--primary)">Experimental Lab</span>
+            <h1 class="preview-headline text-6xl font-black leading-[0.9] tracking-tighter mb-8 uppercase" style="color: var(--on-surface)">
+              Il Tuo Design <br/> <span style="color: var(--primary)">In Tempo Reale</span>
+            </h1>
+            <p class="max-w-md text-sm opacity-70 leading-relaxed mb-8">
+              Personalizza l'estetica del progetto Gruppo Bressi. Cambia i font, regola le tonalità e trova il perfetto equilibrio tra industrial e modernità.
+            </p>
+            <button class="px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all" style="background-color: var(--primary); color: white;">
+              Scopri di più
+            </button>
+          </div>
+          <!-- Abstract Graphic -->
+          <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+             <div class="w-full h-full transform translate-x-1/4 scale-150 rotate-12" style="background: radial-gradient(circle, var(--primary) 0%, transparent 70%);"></div>
+          </div>
+        </section>
+
+        <!-- Mock Cards -->
+        <section class="p-12">
+          <h2 class="preview-headline text-3xl font-black uppercase tracking-tighter mb-12" style="color: var(--on-surface)">Anteprima Componenti</h2>
+          <div class="grid grid-cols-2 gap-8">
+            <div class="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-lg p-6">
+              <div class="w-full aspect-[16/9] bg-gray-100 rounded-xl mb-6 flex items-center justify-center">
+                <span class="material-symbols-outlined text-4xl opacity-20">inventory_2</span>
+              </div>
+              <h3 class="preview-headline text-xl font-bold mb-2 uppercase" style="color: var(--on-surface)">Card Prodotto</h3>
+              <p class="text-xs opacity-60 mb-6">Testo del corpo con il nuovo font selezionato. Leggibilità e contrasto.</p>
+              <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                <span style="color: var(--primary)" class="text-[10px] font-bold uppercase tracking-widest">Dettagli</span>
+                <span class="material-symbols-outlined text-sm" style="color: var(--primary)">arrow_forward</span>
+              </div>
+            </div>
+            
+            <div class="space-y-8">
+              <div>
+                <h4 class="preview-headline text-sm font-bold uppercase tracking-widest mb-4 opacity-40">Gerarchia Testi</h4>
+                <div class="space-y-2">
+                  <h1 class="preview-headline text-4xl font-black italic" style="color: var(--on-surface)">Heading 1</h1>
+                  <h2 class="preview-headline text-2xl font-bold" style="color: var(--on-surface)">Heading 2 Text</h2>
+                  <h3 class="preview-headline text-lg font-bold" style="color: var(--on-surface)">Heading 3 Subtitle</h3>
+                  <p class="text-sm opacity-70">Questo è un paragrafo standard. Utilizza il Body Font per testare la leggibilità su lunghi testi.</p>
+                </div>
+              </div>
+              
+              <div>
+                <h4 class="preview-headline text-sm font-bold uppercase tracking-widest mb-4 opacity-40">Palette UI</h4>
+                <div class="flex gap-2">
+                  <div class="w-12 h-12 rounded-lg shadow-inner" style="background-color: var(--primary)"></div>
+                  <div class="w-12 h-12 rounded-lg shadow-inner" style="background-color: var(--surface); border: 1px solid #ddd"></div>
+                  <div class="w-12 h-12 rounded-lg shadow-inner" style="background-color: var(--on-surface)"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mock Footer -->
+        <footer class="p-12 border-t border-gray-100 bg-gray-50 mt-12">
+           <div class="grid grid-cols-2 gap-12">
+             <div>
+                <div class="preview-headline font-black text-xl mb-4 uppercase" style="color: var(--primary)">Gruppo Bressi</div>
+                <p class="text-[10px] opacity-40 uppercase tracking-widest leading-loose">© 2024 Design Lab <br/> Industrial Elegance Concept</p>
+             </div>
+             <div class="flex gap-8">
+                <div class="space-y-2">
+                  <div class="text-[10px] font-bold uppercase tracking-widest opacity-30">Link</div>
+                  <div class="text-[12px] font-medium" style="color: var(--primary)">Prodotti</div>
+                  <div class="text-[12px] font-medium" style="color: var(--primary)">Contatti</div>
+                </div>
+                <div class="space-y-2">
+                  <div class="text-[10px] font-bold uppercase tracking-widest opacity-30">Social</div>
+                  <div class="text-[12px] font-medium" style="color: var(--primary)">LinkedIn</div>
+                  <div class="text-[12px] font-medium" style="color: var(--primary)">Instagram</div>
+                </div>
+             </div>
+           </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 bg-green-500 text-white px-6 py-3 rounded-xl shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-3">
+    <span class="material-symbols-outlined">check_circle</span>
+    <span class="font-bold text-sm">CSS Copiato negli appunti!</span>
+  </div>
+
+  <script>
+    function updateTheme() {
+      const primary = document.getElementById('color-primary').value;
+      const surface = document.getElementById('color-surface').value;
+      const onSurface = document.getElementById('color-on-surface').value;
+      const headlineFont = document.getElementById('font-headline').value;
+      const bodyFont = document.getElementById('font-body').value;
+
+      // Update Root Variables in Preview Container
+      const preview = document.getElementById('preview-content');
+      preview.style.setProperty('--primary', primary);
+      preview.style.setProperty('--surface', surface);
+      preview.style.setProperty('--on-surface', onSurface);
+      preview.style.setProperty('--font-headline', `"${headlineFont}", sans-serif`);
+      preview.style.setProperty('--font-body', `"${bodyFont}", sans-serif`);
+
+      // Dynamically load Google Fonts if not loaded
+      if (headlineFont !== 'Epilogue') {
+        loadFont(headlineFont);
+      }
+      if (bodyFont !== 'Work Sans') {
+        loadFont(bodyFont);
+      }
+    }
+
+    function loadFont(font) {
+      const id = 'font-' + font.replace(/\s+/g, '-').toLowerCase();
+      if (!document.getElementById(id)) {
+        const link = document.createElement('link');
+        link.id = id;
+        link.rel = 'stylesheet';
+        link.href = `https://fonts.googleapis.com/css2?family=${font.replace(/\s+/g, '+')}:wght@400;700;900&display=swap`;
+        document.head.appendChild(link);
+      }
+    }
+
+    function applyPreset(type) {
+      const controls = {
+        industrial: { p: '#b71029', s: '#f9f6f5', os: '#1a1a1a', h: 'Epilogue', b: 'Work Sans' },
+        tech: { p: '#2563eb', s: '#f0f4f8', os: '#1e293b', h: 'Space Grotesk', b: 'Inter' },
+        luxury: { p: '#c5a059', s: '#121212', os: '#f9f6f5', h: 'Playfair Display', b: 'Karla' },
+        minimal: { p: '#ff7576', s: '#0f172a', os: '#f8fafc', h: 'Outfit', b: 'Inter' }
+      };
+
+      const p = controls[type];
+      document.getElementById('color-primary').value = p.p;
+      document.getElementById('color-surface').value = p.s;
+      document.getElementById('color-on-surface').value = p.os;
+      document.getElementById('font-headline').value = p.h;
+      document.getElementById('font-body').value = p.b;
+      updateTheme();
+    }
+
+    function toggleDevice(device) {
+      const container = document.getElementById('preview-viewport');
+      const viewport = document.getElementById('preview-content');
+      
+      if (device === 'mobile') {
+        viewport.style.maxWidth = '375px';
+        viewport.style.borderRadius = '32px';
+      } else if (device === 'tablet') {
+        viewport.style.maxWidth = '768px';
+        viewport.style.borderRadius = '16px';
+      } else {
+        viewport.style.maxWidth = '100%';
+        viewport.style.borderRadius = '0';
+      }
+    }
+
+    function exportCSS() {
+      const primary = document.getElementById('color-primary').value;
+      const surface = document.getElementById('color-surface').value;
+      const onSurface = document.getElementById('color-on-surface').value;
+      const hFont = document.getElementById('font-headline').value;
+      const bFont = document.getElementById('font-body').value;
+
+      const css = `:root {
+  --primary: ${primary};
+  --surface: ${surface};
+  --on-surface: ${onSurface};
+  --font-headline: '${hFont}', sans-serif;
+  --font-body: '${bFont}', sans-serif;
+}`;
+
+      navigator.clipboard.writeText(css).then(() => {
+        const toast = document.getElementById('toast');
+        toast.style.transform = 'translateY(0)';
+        toast.style.opacity = '1';
+        setTimeout(() => {
+          toast.style.transform = 'translateY(20px)';
+          toast.style.opacity = '0';
+        }, 3000);
+      });
+    }
+
+    // Initialize
+    updateTheme();
+  </script>
+</body>
+</html>
