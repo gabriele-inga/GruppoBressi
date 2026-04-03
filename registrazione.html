@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Registrazione | Gruppo Bressi</title>
+  <title>Registrazione | Gruppo Bressi Srl</title>
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -42,7 +42,7 @@
       <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity shrink-0">
         <img src="logo-drinkclear.png" alt="Drinkclear Logo" class="h-8 md:h-10 w-auto object-contain" />
         <div class="font-['Epilogue'] text-lg md:text-2xl font-black text-[#b71029] tracking-tighter whitespace-nowrap">
-          Gruppo Bressi SRL
+          Gruppo Bressi Srl
         </div>
       </a>
       <a href="index.html" class="flex items-center gap-2 text-slate-600 hover:text-primary transition-colors font-body font-medium text-sm">
@@ -74,6 +74,12 @@
               <span class="material-symbols-outlined text-sm">verified</span>
             </div>
             <p class="text-[10px] font-label uppercase tracking-widest text-slate-300 font-bold">Area Riservata</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-sm">download</span>
+            </div>
+            <p class="text-[10px] font-label uppercase tracking-widest text-slate-300 font-bold">Documentazione</p>
           </div>
         </div>
 
@@ -189,6 +195,45 @@
         tabPrivato.classList.add('text-slate-500');
       }
     }
+  </script>
+
+
+  <!-- Floating Back Button -->
+  <button onclick="history.back()" class="fixed bottom-8 left-8 z-[100] group flex items-center bg-white text-primary border border-gray-200 p-4 rounded-full shadow-2xl transition-all duration-300 hover:pr-6 hover:pl-6 active:scale-95" id="back-fab">
+    <span class="material-symbols-outlined transition-transform duration-300 group-hover:-translate-x-1">arrow_back</span>
+    <span class="max-w-0 overflow-hidden whitespace-nowrap opacity-0 group-hover:max-w-[200px] group-hover:opacity-100 group-hover:ml-3 transition-all duration-500 ease-in-out font-bold uppercase tracking-widest text-primary text-[10px]">Indietro</span>
+  </button>
+  
+  
+
+
+  <script class="global-fab-logic">
+    document.addEventListener('DOMContentLoaded', () => {
+      const backFab = document.getElementById('back-fab');
+      const whatsappFab = document.getElementById('whatsapp-fab');
+      const footerElement = document.querySelector('footer');
+
+      const adjustFabPosition = () => {
+        if (!footerElement) return;
+        const footerRect = footerElement.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        
+        let offset = '2rem'; // default 8 tailwind spacing
+        // If footer is visible in viewport
+        if (footerRect.top < viewportHeight) {
+          offset = (viewportHeight - footerRect.top + 32) + 'px';
+        }
+        
+        if (whatsappFab) whatsappFab.style.bottom = offset;
+        if (backFab) backFab.style.bottom = offset;
+      };
+
+      window.addEventListener('scroll', adjustFabPosition, { passive: true });
+      window.addEventListener('resize', adjustFabPosition, { passive: true });
+      
+      // Delay initial check slightly to ensure rendering is complete
+      setTimeout(adjustFabPosition, 100);
+    });
   </script>
 
 </body>

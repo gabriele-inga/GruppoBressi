@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Pagina in Aggiornamento | Gruppo Bressi</title>
+  <title>Pagina in Aggiornamento | Gruppo Bressi Srl</title>
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -50,12 +50,12 @@
         <img 
           class="w-32 md:w-56 max-h-24 object-contain" 
           src="logohero1.png" 
-          alt="Gruppo Bressi Logo 1" />
+          alt="Gruppo Bressi Srl Logo 1" />
         <div class="h-10 w-px bg-slate-300"></div>
         <img 
           class="w-32 md:w-56 max-h-24 object-contain" 
           src="logohero2.png" 
-          alt="Gruppo Bressi Logo 2" />
+          alt="Gruppo Bressi Srl Logo 2" />
       </div>
 
       <div class="space-y-4 md:space-y-6">
@@ -110,6 +110,45 @@
     }
     body { font-family: 'Work Sans', sans-serif; }
   </style>
+
+
+  <!-- Floating Back Button -->
+  <button onclick="history.back()" class="fixed bottom-8 left-8 z-[100] group flex items-center bg-white text-primary border border-gray-200 p-4 rounded-full shadow-2xl transition-all duration-300 hover:pr-6 hover:pl-6 active:scale-95" id="back-fab">
+    <span class="material-symbols-outlined transition-transform duration-300 group-hover:-translate-x-1">arrow_back</span>
+    <span class="max-w-0 overflow-hidden whitespace-nowrap opacity-0 group-hover:max-w-[200px] group-hover:opacity-100 group-hover:ml-3 transition-all duration-500 ease-in-out font-bold uppercase tracking-widest text-primary text-[10px]">Indietro</span>
+  </button>
+  
+  
+
+
+  <script class="global-fab-logic">
+    document.addEventListener('DOMContentLoaded', () => {
+      const backFab = document.getElementById('back-fab');
+      const whatsappFab = document.getElementById('whatsapp-fab');
+      const footerElement = document.querySelector('footer');
+
+      const adjustFabPosition = () => {
+        if (!footerElement) return;
+        const footerRect = footerElement.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        
+        let offset = '2rem'; // default 8 tailwind spacing
+        // If footer is visible in viewport
+        if (footerRect.top < viewportHeight) {
+          offset = (viewportHeight - footerRect.top + 32) + 'px';
+        }
+        
+        if (whatsappFab) whatsappFab.style.bottom = offset;
+        if (backFab) backFab.style.bottom = offset;
+      };
+
+      window.addEventListener('scroll', adjustFabPosition, { passive: true });
+      window.addEventListener('resize', adjustFabPosition, { passive: true });
+      
+      // Delay initial check slightly to ensure rendering is complete
+      setTimeout(adjustFabPosition, 100);
+    });
+  </script>
 
 </body>
 </html>
