@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Registrazione | Gruppo Bressi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface": "#2f2f2e",
+            "primary": "#b71029",
+            "surface": "#f9f6f5",
+            "surface-container": "#eae7e7",
+            "surface-container-low": "#f3f0ef",
+            "outline": "#787676",
+            "outline-variant": "#afadac",
+            "on-primary": "#ffefee",
+            "primary-dim": "#a30021",
+            "on-surface-variant": "#5c5b5b"
+          },
+          fontFamily: {
+            "headline": ["Epilogue"],
+            "body": ["Work Sans"],
+            "label": ["Space Grotesk"]
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface antialiased h-[100svh] flex flex-col overflow-hidden">
+
+  <!-- Header -->
+  <header class="w-full z-[100] bg-surface/80 backdrop-blur-md border-b border-gray-200/20 shrink-0">
+    <div class="max-w-[1440px] mx-auto px-4 md:px-8 h-16 md:h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity shrink-0">
+        <img src="logo-drinkclear.png" alt="Drinkclear Logo" class="h-8 md:h-10 w-auto object-contain" />
+        <div class="font-['Epilogue'] text-lg md:text-2xl font-black text-[#b71029] tracking-tighter whitespace-nowrap">
+          Gruppo Bressi SRL
+        </div>
+      </a>
+      <a href="index.html" class="flex items-center gap-2 text-slate-600 hover:text-primary transition-colors font-body font-medium text-sm">
+        <span class="material-symbols-outlined text-lg">arrow_back</span>
+        <span class="hidden sm:inline">Torna alla Home</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-1 w-full flex items-center justify-center p-4 md:p-8 relative">
+    <!-- Background elements -->
+    <div class="absolute inset-0 z-0 opacity-30">
+      <div class="absolute top-1/4 -left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 -right-1/4 w-96 h-96 bg-slate-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-4xl bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl overflow-hidden border border-gray-100 flex flex-col md:flex-row max-h-full">
+      
+      <!-- Left Sidebar (Branding) -->
+      <div class="hidden md:flex w-1/3 bg-slate-950 p-8 flex-col justify-between text-white relative overflow-hidden shrink-0">
+        <div class="relative z-10">
+          <h2 class="font-headline font-black text-3xl uppercase tracking-tighter leading-tight mb-4">Portale <span class="text-primary">Clienti</span></h2>
+          <p class="text-slate-400 font-body text-sm leading-relaxed">Registrati per accedere a listini esclusivi, offerte e schede tecniche.</p>
+        </div>
+        
+        <div class="relative z-10 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-sm">verified</span>
+            </div>
+            <p class="text-[10px] font-label uppercase tracking-widest text-slate-300 font-bold">Area Riservata</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-sm">download</span>
+            </div>
+            <p class="text-[10px] font-label uppercase tracking-widest text-slate-300 font-bold">Documentazione</p>
+          </div>
+        </div>
+
+        <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-primary/20 rounded-full blur-3xl"></div>
+      </div>
+
+      <!-- Right Side (Form Area) -->
+      <div class="w-full md:w-2/3 flex flex-col bg-white">
+        
+        <!-- Tab Selector -->
+        <div class="p-6 pb-0 shrink-0">
+          <div class="flex bg-slate-100 p-1 rounded-xl">
+            <button id="tab-privato" class="flex-1 py-2 px-4 rounded-lg font-headline font-bold text-[10px] md:text-xs uppercase tracking-widest transition-all bg-white text-primary shadow-sm" onclick="showForm('privato')">Privato</button>
+            <button id="tab-azienda" class="flex-1 py-2 px-4 rounded-lg font-headline font-bold text-[10px] md:text-xs uppercase tracking-widest transition-all text-slate-500 hover:text-on-surface" onclick="showForm('azienda')">Azienda</button>
+          </div>
+        </div>
+
+        <!-- Form Scrollable area -->
+        <div class="flex-1 overflow-y-auto p-6 md:p-10 custom-scrollbar">
+          
+          <!-- Privato Form -->
+          <form id="form-privato" action="sitoinaggiornamento.html" class="space-y-4 animate-in fade-in slide-in-from-right-4 duration-500">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label class="font-label text-[10px] uppercase text-slate-500 font-bold tracking-widest">Nome</label>
+                <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 focus:border-primary focus:bg-white transition-all ring-0 focus:ring-0 text-sm" placeholder="Mario" required />
+              </div>
+              <div class="space-y-1.5">
+                <label class="font-label text-[10px] uppercase text-slate-500 font-bold tracking-widest">Cognome</label>
+                <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 focus:border-primary focus:bg-white transition-all ring-0 focus:ring-0 text-sm" placeholder="Rossi" required />
+              </div>
+            </div>
+            <div class="space-y-1.5">
+              <label class="font-label text-[10px] uppercase text-slate-500 font-bold tracking-widest">Email Personale</label>
+              <input type="email" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 focus:border-primary focus:bg-white transition-all ring-0 focus:ring-0 text-sm" placeholder="mario.rossi@email.it" required />
+            </div>
+            <div class="space-y-1.5">
+              <label class="font-label text-[10px] uppercase text-slate-500 font-bold tracking-widest">Password</label>
+              <input type="password" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 focus:border-primary focus:bg-white transition-all ring-0 focus:ring-0 text-sm" placeholder="••••••••" required />
+            </div>
+            <button type="submit" class="w-full bg-primary text-white font-headline font-black uppercase tracking-widest py-4 rounded-xl hover:bg-primary-dim shadow-xl shadow-primary/20 transition-all active:scale-95 mt-4 text-sm">Registrati</button>
+          </form>
+
+          <!-- Azienda Form -->
+          <form id="form-azienda" action="sitoinaggiornamento.html" class="space-y-4 hidden animate-in fade-in slide-in-from-right-4 duration-500">
+            <div class="space-y-1.5">
+              <label class="font-label text-[10px] uppercase text-slate-500 font-bold tracking-widest">Ragione Sociale</label>
+              <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 focus:border-primary focus:bg-white transition-all ring-0 focus:ring-0 text-sm" placeholder="Esempio S.R.L." required />
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label class="font-label text-[10px] uppercase text-slate-500 font-bold tracking-widest">Partita IVA</label>
+                <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 focus:border-primary focus:bg-white transition-all ring-0 focus:ring-0 text-sm" placeholder="01234567890" required />
+              </div>
+              <div class="space-y-1.5">
+                <label class="font-label text-[10px] uppercase text-slate-500 font-bold tracking-widest">Referente</label>
+                <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 focus:border-primary focus:bg-white transition-all ring-0 focus:ring-0 text-sm" placeholder="Nome Referente" required />
+              </div>
+            </div>
+            <div class="space-y-1.5">
+              <label class="font-label text-[10px] uppercase text-slate-500 font-bold tracking-widest">Email Aziendale</label>
+              <input type="email" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 focus:border-primary focus:bg-white transition-all ring-0 focus:ring-0 text-sm" placeholder="info@azienda.it" required />
+            </div>
+            <div class="space-y-1.5">
+              <label class="font-label text-[10px] uppercase text-slate-500 font-bold tracking-widest">Password</label>
+              <input type="password" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 focus:border-primary focus:bg-white transition-all ring-0 focus:ring-0 text-sm" placeholder="••••••••" required />
+            </div>
+            <button type="submit" class="w-full bg-on-surface text-white font-headline font-black uppercase tracking-widest py-4 rounded-xl hover:bg-slate-800 shadow-xl shadow-slate-950/20 transition-all active:scale-95 mt-4 text-sm">Richiedi Accesso</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #dfdcdc;
+      border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #b71029;
+    }
+  </style>
+
+  <script>
+    function showForm(type) {
+      const formPrivato = document.getElementById('form-privato');
+      const formAzienda = document.getElementById('form-azienda');
+      const tabPrivato = document.getElementById('tab-privato');
+      const tabAzienda = document.getElementById('tab-azienda');
+
+      if (type === 'privato') {
+        formPrivato.classList.remove('hidden');
+        formAzienda.classList.add('hidden');
+        tabPrivato.classList.add('bg-white', 'text-primary', 'shadow-sm');
+        tabPrivato.classList.remove('text-slate-500');
+        tabAzienda.classList.remove('bg-white', 'text-primary', 'shadow-sm');
+        tabAzienda.classList.add('text-slate-500');
+      } else {
+        formPrivato.classList.add('hidden');
+        formAzienda.classList.remove('hidden');
+        tabAzienda.classList.add('bg-white', 'text-primary', 'shadow-sm');
+        tabAzienda.classList.remove('text-slate-500');
+        tabPrivato.classList.remove('bg-white', 'text-primary', 'shadow-sm');
+        tabPrivato.classList.add('text-slate-500');
+      }
+    }
+  </script>
+
+</body>
+</html>

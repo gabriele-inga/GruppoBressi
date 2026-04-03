@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Pagina in Aggiornamento | Gruppo Bressi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface": "#2f2f2e",
+            "primary": "#b71029",
+            "surface": "#f9f6f5",
+            "surface-container": "#eae7e7",
+            "surface-container-low": "#f3f0ef",
+            "outline": "#787676",
+            "outline-variant": "#afadac",
+            "on-primary": "#ffefee",
+            "primary-dim": "#a30021",
+            "on-surface-variant": "#5c5b5b"
+          },
+          fontFamily: {
+            "headline": ["Epilogue"],
+            "body": ["Work Sans"],
+            "label": ["Space Grotesk"]
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface antialiased h-[100svh] w-full flex flex-col items-center justify-center relative overflow-hidden p-4">
+  
+  <!-- Content Background Blur -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-1/4 -left-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-1/4 -right-1/4 w-[600px] h-[600px] bg-slate-500/5 rounded-full blur-[120px]"></div>
+  </div>
+
+  <div class="relative z-10 w-full max-w-4xl flex flex-col items-center justify-center h-full text-center animate-in fade-in zoom-in duration-700">
+    
+    <div class="flex-1 flex flex-col items-center justify-center w-full py-8">
+      <!-- Hero Logos -->
+      <div class="flex flex-row items-center justify-center gap-6 md:gap-12 mb-10 md:mb-16 opacity-90 scale-90 md:scale-100">
+        <img 
+          class="w-32 md:w-56 max-h-24 object-contain" 
+          src="logohero1.png" 
+          alt="Gruppo Bressi Logo 1" />
+        <div class="h-10 w-px bg-slate-300"></div>
+        <img 
+          class="w-32 md:w-56 max-h-24 object-contain" 
+          src="logohero2.png" 
+          alt="Gruppo Bressi Logo 2" />
+      </div>
+
+      <div class="space-y-4 md:space-y-6">
+        <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full font-label text-[10px] md:text-xs font-bold uppercase tracking-widest mb-2">
+          <span class="material-symbols-outlined text-[14px] md:text-[16px] animate-spin-slow">settings</span>
+          Intervento Tecnico in Corso
+        </div>
+        
+        <h1 class="font-headline font-black text-4xl md:text-6xl lg:text-7xl tracking-tighter text-on-surface leading-[0.9] uppercase">
+          Pagina in <br /> <span class="text-primary font-bold">Aggiornamento</span>
+        </h1>
+        
+        <p class="font-body text-lg md:text-xl lg:text-2xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed pt-2">
+          Stiamo perfezionando questa sezione per offrirti un'esperienza superiore. <br class="hidden md:block" /> Torna a trovarci tra pochi giorni.
+        </p>
+
+        <div class="pt-8 md:pt-10">
+          <a href="index.html" class="inline-flex items-center group">
+            <button class="bg-primary text-on-primary font-headline font-bold uppercase tracking-widest text-xs md:text-sm px-10 py-4 md:px-12 md:py-5 rounded-full hover:bg-primary-dim transition-all shadow-2xl shadow-primary/30 active:scale-95 flex items-center gap-3">
+              <span class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
+              Torna alla Home
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Mini-Footer -->
+    <div class="w-full max-w-lg mx-auto pb-8 pt-4 border-t border-slate-200/60 mt-auto">
+      <p class="font-label text-[10px] uppercase text-slate-400 tracking-widest font-bold mb-3 md:mb-4">Hai Urgenze? Contattaci subito</p>
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+        <div class="text-on-surface flex items-center gap-2 font-body text-xs md:text-sm font-medium opacity-70">
+          <span class="material-symbols-outlined text-base">location_on</span>
+          Stradale Castagnole, 31 - Carignano (TO)
+        </div>
+        <div class="text-on-surface flex items-center gap-2 font-body text-xs md:text-sm font-medium opacity-70">
+          <span class="material-symbols-outlined text-base">call</span>
+          011 1901 1243
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <style>
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+      animation: spin-slow 8s linear infinite;
+    }
+    body { font-family: 'Work Sans', sans-serif; }
+  </style>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="light" lang="it">
+<html class="light scroll-smooth" lang="it">
 
 <head>
   <meta charset="utf-8" />
@@ -94,117 +94,260 @@
 </head>
 
 <body class="selection:bg-secondary-container selection:text-on-secondary-container">
-  <!-- TopNavBar -->
-  <!-- TopNavBar -->
-  <nav class="fixed top-0 w-full z-[200] bg-[#f9f6f5]/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
-  <div class="flex justify-between items-center px-4 md:px-8 py-3 md:py-4 max-w-full mx-auto">
-  <a href="Gruppo_Bressi_Home.html" class="flex items-center gap-2 md:gap-3 hover:opacity-80 transition-opacity">
-      <img src="logo-drinkclear.png" alt="Drinkclear Logo" class="h-8 md:h-10 w-auto object-contain" />
-      <div class="font-['Epilogue'] text-lg md:text-3xl font-black text-[#b71029] dark:text-[#ff7576] tracking-tighter whitespace-nowrap">
-          Gruppo Bressi
-      </div>
-  </a>
-
-  <!-- Hamburger Button (Mobile) -->
-  <button id="mobile-menu-btn" class="md:hidden text-on-surface p-2 z-[110] relative focus:outline-none">
-    <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
-  </button>
-
-  <div class="hidden md:flex items-center space-x-8 lg:space-x-12 relative md:mr-10 lg:mr-16">
-  <a class="font-['Epilogue'] font-bold uppercase tracking-tight text-sm text-[#b71029] dark:text-[#ff7576] border-b-2 border-[#b71029] pb-1" href="Gruppo_Bressi_Home.html">Home</a>
-
-  <!-- Dropdown Prodotti -->
-  <div class="group relative flex items-center h-full cursor-pointer">
-      <a href="prodotti.html" class="font-['Epilogue'] font-bold uppercase tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-[#b71029] transition-colors flex items-center gap-1">
-          Prodotti
-          <span class="material-symbols-outlined text-sm font-bold">expand_more</span>
-      </a>
-      <div class="absolute top-full right-0 w-[700px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] pt-6">
-          <div class="bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100 dark:border-gray-800 p-6 flex gap-8 text-left">
-              <!-- Polveri Alimentari -->
-              <a href="prodotti.html#polveri" class="flex-1 space-y-4 p-4 -m-4 hover:bg-primary/5 dark:hover:bg-primary/10 rounded-xl transition-all group/item block">
-                  <div class="relative overflow-hidden rounded-2xl h-36">
-                      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVdKtS4yKf9Y9ue4pdXDpRUXuJb9NtLqtm6sWB7COm4qR5F-HjNqxaytCtg5TgFSAYwau2Ok8bT9JDN3odnIiVmtq49ikBiYk4dTdojwXWrhDvL7KMguvVQYXlMwZR_-RFTc7uRY4ehJs1aaZ7gpv6McGakUCJIXeEOp_3ibc4sUuzTrOOtWU6oSV0Wf1x0dQzoei10be9RzAEiAztd81fWPWyvNU-jZxTtHXMIkYHT73ZpV400WN0aKKwPBZncE97cvTtpBJo2tM" class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-500" alt="Polveri Alimentari"/>
-                  </div>
-                  <h3 class="font-headline font-bold text-xl text-on-surface">Polveri Alimentari</h3>
-                  <div class="grid grid-cols-2 gap-y-3 font-body text-[14px] text-[#787676]">
-                      <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#f0a6b5]"></div>Farine</div>
-                      <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#f0a6b5]"></div>Estratti</div>
-                      <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#f0a6b5]"></div>Spezie</div>
-                      <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#f0a6b5]"></div>Additivi</div>
-                  </div>
-              </a>
-              
-              <div class="w-px bg-gray-100 dark:bg-gray-800 my-4"></div>
-
-              <!-- Macchinari Industriali -->
-              <a href="prodotti.html#macchinari" class="flex-1 space-y-4 p-4 -m-4 hover:bg-primary/5 dark:hover:bg-primary/10 rounded-xl transition-all group/item block">
-                  <div class="relative overflow-hidden rounded-2xl h-36">
-                      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsTnw0aScajJhTJc0jGGYW_hNkHjiYP5Mx82zduF1SLIFeVRrsO6_Fs-IgXL1K1lqgRzEQbNqHuOf1BR9SfUsudiUFDBxaMxGnFcu3Jxw8f0Z7eHRBDkpn3P7q8bFpP3Xop8pt6YK34O4QcyJ8UzPdaVzDZpFUWpPTMjSjRb0eJy2NuoK3Hdz7pBAH77FykWiDRDH6qlY5shNz-X7-Oa33gvhZ35z-TS0LN8wT1q6Z9FL3nvu_DZzCO9Jj76zX3wL8WL-EhfEmgZM" class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-500" alt="Macchinari Industriali"/>
-                  </div>
-                  <h3 class="font-headline font-bold text-xl text-on-surface">Macchinari Industriali</h3>
-                  <div class="grid grid-cols-2 gap-y-3 font-body text-[14px] text-[#787676]">
-                      <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#c3b6a6]"></div>Miscelatori</div>
-                      <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#c3b6a6]"></div>Confezionamento</div>
-                      <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#c3b6a6]"></div>Essiccatori</div>
-                      <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#c3b6a6]"></div>Sistemi Pesatura</div>
-                  </div>
-              </a>
+  <nav class="fixed top-0 w-full z-[200]">
+    <!-- Top Navbar Row - Solid -->
+    <div class="bg-[#f9f6f5] dark:bg-slate-900 border-b border-gray-200/50 dark:border-gray-800/50 shadow-md">
+      <div class="flex justify-between items-center px-4 md:px-8 py-3 max-w-full mx-auto">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity shrink-0">
+          <img src="logo-drinkclear.png" alt="Drinkclear Logo" class="h-8 md:h-10 w-auto object-contain" />
+          <div class="font-['Epilogue'] text-lg md:text-2xl font-black text-[#b71029] dark:text-[#ff7576] tracking-tighter whitespace-nowrap">
+            Gruppo Bressi SRL
           </div>
+        </a>
+
+        <div class="flex items-center gap-4 lg:gap-6">
+          <!-- Actions (Desktop) -->
+          <div class="hidden md:flex items-center gap-4 shrink-0">
+            <!-- Search Box -->
+            <div class="relative group">
+              <input type="text" placeholder="Cerca prodotti..." class="bg-gray-100 dark:bg-slate-800 border-transparent focus:border-primary focus:ring-0 rounded-full py-1.5 px-4 pr-10 text-xs w-32 lg:w-48 transition-all focus:w-48 lg:focus:w-64" />
+              <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 group-hover:text-primary cursor-pointer text-lg">search</span>
+            </div>
+
+        <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 bg-gray-100/50 dark:bg-slate-800/50 px-3 py-1.5 rounded-full border border-gray-200/50 dark:border-gray-700/50">
+              <a href="#" class="hover:opacity-80 transition-opacity flex items-center" title="Italiano">
+                <svg class="w-5 h-5" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#CE2B37" d="M36 27a4 4 0 0 1-4 4h-8V5h8a4 4 0 0 1 4 4v18z"></path>
+                  <path fill="#009246" d="M4 5a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h8V5H4z"></path>
+                  <path fill="#EEE" d="M12 5h12v26H12z"></path>
+                </svg>
+              </a>
+
+              <span class="w-[1px] h-3 bg-gray-300 dark:bg-gray-600"></span>
+
+              <a href="#" class="text-base leading-none hover:opacity-80 transition-opacity" title="English">
+                <svg class="w-5 h-5" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#00247D" d="M0 9.059V13h5.628zM4.664 31H13v-5.837zM23 25.164V31h8.335zM0 23v3.941L5.63 23zM31.337 5H23v5.837zM36 26.942V23h-5.631zM36 13V9.059L30.371 13zM13 5H4.664L13 10.837z"></path><path fill="#CF1B2B" d="M25.14 23l9.712 6.801a3.977 3.977 0 0 0 .99-1.749L28.627 23H25.14zM13 23h-2.141l-9.711 6.8c.521.53 1.189.909 1.938 1.085L13 23.943V23zm10-10h2.141l9.711-6.8a3.988 3.988 0 0 0-1.937-1.085L23 12.057V13zm-12.141 0L1.148 6.2a3.994 3.994 0 0 0-.991 1.749L7.372 13h3.487z"></path><path fill="#EEE" d="M36 21H21v10h2v-5.836L31.335 31H32a3.99 3.99 0 0 0 2.852-1.199L25.14 23h3.487l7.215 5.052c.093-.337.158-.686.158-1.052v-.058L30.369 23H36v-2zM0 21v2h5.63L0 26.941V27c0 1.091.439 2.078 1.148 2.8l9.711-6.8H13v.943l-9.914 6.941c.294.07.598.116.914.116h.664L13 25.163V31h2V21H0zM36 9a3.983 3.983 0 0 0-1.148-2.8L25.141 13H23v-.943l9.915-6.942A4.001 4.001 0 0 0 32 5h-.663L23 10.837V5h-2v10h15v-2h-5.629L36 9.059V9zM13 5v5.837L4.664 5H4a3.985 3.985 0 0 0-2.852 1.2l9.711 6.8H7.372L.157 7.949A3.968 3.968 0 0 0 0 9v.059L5.628 13H0v2h15V5h-2z"></path><path fill="#CF1B2B" d="M21 15V5h-6v10H0v6h15v10h6V21h15v-6z"></path></g></svg>
+              </a>
+            </div>
+
+            <a href="registrazione.html">
+              <button class="font-['Epilogue'] flex items-center bg-[#b71029] text-white text-sm font-bold uppercase tracking-[0.1em] px-6 py-2.5 rounded-full hover:bg-[#a30021] transition-all shadow-md active:scale-95 whitespace-nowrap">
+                <span class="material-symbols-outlined text-lg mr-2">person</span>
+                Registrati
+              </button>
+            </a>
+          </div>
+
+          <!-- Hamburger (Visible below xl) -->
+          <button id="mobile-menu-btn" class="xl:hidden text-on-surface p-2 relative focus:outline-none">
+            <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
+          </button>
+        </div>
       </div>
-  </div>
+    </div>
 
-  <a class="font-['Epilogue'] font-bold uppercase tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-[#b71029] transition-colors" href="contatti.html">Contatti</a>
-  </div>
+    <!-- Bottom Navbar Row (Menu Items) - 80% Transparency with blur -->
+    <div class="hidden xl:flex justify-end items-center px-8 py-2 max-w-full mx-auto bg-[#f9f6f5]/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-800/20">
+      <div class="flex items-center gap-4 2xl:gap-6 relative">
+        <a class="px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-[#b71029] dark:text-[#ff7576] border-b-2 border-[#b71029]" href="index.html">Home</a>
+        <a class="px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 hover:text-[#b71029] transition-colors whitespace-nowrap" href="sitoinaggiornamento.html">Servizi</a>
+        
+        <div class="group relative py-2">
+          <a class="px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 hover:text-[#b71029] transition-colors whitespace-nowrap flex items-center gap-1 cursor-pointer" href="prodotti-alimentari.html">
+            Prodotti Alimentari
+            <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+          </a>
+          
+          <div class="absolute top-[100%] left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50 w-[960px] max-w-[90vw]">
+            <div class="bg-white dark:bg-slate-800 shadow-2xl border border-gray-200 dark:border-gray-700 p-6 flex gap-8 rounded-b-xl">
+              
+              <div class="flex-1 flex flex-col gap-4">
+                <div>
+                  <img src="banner/caldi.webp" alt="Prodotti Caldi" loading="lazy" decoding="async" class="w-full h-12 object-cover rounded-md mb-1.5 border border-gray-100 dark:border-gray-700">
+                  <a href="prodotti-alimentari.html#caldi"><h3 class="bg-[#b71029] text-white text-[12px] font-bold uppercase px-3 py-1.5 mb-2 rounded-sm hover:bg-[#a30021] transition-colors">Prodotti Caldi</h3></a>
+                  <ul class="text-[11px] uppercase text-gray-700 dark:text-gray-300 tracking-wide font-medium">
+                    <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] transition-colors"><a href="prodotti-alimentari.html#caldi" class="block">Voce da modificare 1</a></li>
+                    <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] transition-colors"><a href="prodotti-alimentari.html#caldi" class="block">Voce da modificare 2</a></li>
+                    <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] transition-colors"><a href="prodotti-alimentari.html#caldi" class="block">Voce da modificare 3</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <img src="banner/caffe.webp" alt="Caffè" loading="lazy" decoding="async" class="w-full h-12 object-cover rounded-md mb-1.5 border border-gray-100 dark:border-gray-700">
+                  <a href="prodotti-alimentari.html#caffe"><h3 class="bg-[#b71029] text-white text-[12px] font-bold uppercase px-3 py-1.5 mb-2 rounded-sm hover:bg-[#a30021] transition-colors">Caffè</h3></a>
+                  <ul class="text-[11px] uppercase text-gray-700 dark:text-gray-300 tracking-wide font-medium">
+                    <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] transition-colors"><a href="prodotti-alimentari.html#caffe" class="block">Voce da modificare 1</a></li>
+                    <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] transition-colors"><a href="prodotti-alimentari.html#caffe" class="block">Voce da modificare 2</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <img src="banner/te.webp" alt="Tè Tisane Infusi" loading="lazy" decoding="async" class="w-full h-12 object-cover rounded-md mb-1.5 border border-gray-100 dark:border-gray-700">
+                  <a href="prodotti-alimentari.html#tisane"><h3 class="bg-[#b71029] text-white text-[12px] font-bold uppercase px-3 py-1.5 mb-2 rounded-sm hover:bg-[#a30021] transition-colors">Tè Tisane Infusi</h3></a>
+                  <ul class="text-[11px] uppercase text-gray-700 dark:text-gray-300 tracking-wide font-medium">
+                    <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] transition-colors"><a href="prodotti-alimentari.html#tisane" class="block">Voce da modificare 1</a></li>
+                  </ul>
+                </div>
+              </div>
 
+              <div class="flex-1 flex flex-col gap-4">
+                <div>
+                  <img src="banner/freddi.webp" alt="Prodotti Freddi" loading="lazy" decoding="async" class="w-full h-12 object-cover rounded-md mb-1.5 border border-gray-100 dark:border-gray-700">
+                  <a href="prodotti-alimentari.html#freddi"><h3 class="bg-[#b71029] text-white text-[12px] font-bold uppercase px-3 py-1.5 mb-2 rounded-sm hover:bg-[#a30021] transition-colors">Prodotti Freddi</h3></a>
+                  <ul class="text-[11px] uppercase text-gray-700 dark:text-gray-300 tracking-wide font-medium">
+                    <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] transition-colors"><a href="prodotti-alimentari.html#freddi" class="block">Voce da modificare 1</a></li>
+                    <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] transition-colors"><a href="prodotti-alimentari.html#freddi" class="block">Voce da modificare 2</a></li>
+                    <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] transition-colors"><a href="prodotti-alimentari.html#freddi" class="block">Voce da modificare 3</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <img src="banner/preparati.webp" alt="Preparati per Sorbetti" loading="lazy" decoding="async" class="w-full h-12 object-cover rounded-md mb-1.5 border border-gray-100 dark:border-gray-700">
+                  <a href="prodotti-alimentari.html#preparati"><h3 class="bg-[#b71029] text-white text-[12px] font-bold uppercase px-3 py-1.5 mb-2 rounded-sm hover:bg-[#a30021] transition-colors">Preparati Vari</h3></a>
+                  <ul class="text-[11px] uppercase text-gray-700 dark:text-gray-300 tracking-wide font-medium">
+                    <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] transition-colors"><a href="prodotti-alimentari.html#preparati" class="block">Voce da modificare 1</a></li>
+                    <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] transition-colors"><a href="prodotti-alimentari.html#preparati" class="block">Voce da modificare 2</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <img src="banner/tisanefredde.webp" alt="Tè Freddi" loading="lazy" decoding="async" class="w-full h-12 object-cover rounded-md mb-1.5 border border-gray-100 dark:border-gray-700">
+                  <a href="prodotti-alimentari.html#shake"><h3 class="bg-[#b71029] text-white text-[12px] font-bold uppercase px-3 py-1.5 mb-2 rounded-sm hover:bg-[#a30021] transition-colors">Tè Freddi & Shake</h3></a>
+                  <ul class="text-[11px] uppercase text-gray-700 dark:text-gray-300 tracking-wide font-medium">
+                    <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] transition-colors"><a href="prodotti-alimentari.html#shake" class="block">Voce da modificare 1</a></li>
+                  </ul>
+                </div>
+              </div>
 
-  </div>
+              <div class="flex-1 flex flex-col gap-4">
 
+                <div>
+                  <img src="banner/food.webp" alt="Food" loading="lazy" decoding="async" class="w-full h-12 object-cover rounded-md mb-1.5 border border-gray-100 dark:border-gray-700">
+                  <a href="prodotti-alimentari.html#food"><h3 class="bg-[#b71029] text-white text-[12px] font-bold uppercase px-3 py-1.5 mb-2 rounded-sm hover:bg-[#a30021] transition-colors">Food</h3></a>
+                  <ul class="text-[11px] uppercase text-gray-700 dark:text-gray-300 tracking-wide font-medium">
+                    <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] transition-colors"><a href="prodotti-alimentari.html#food" class="block">Voce da modificare 1</a></li>
+                    <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] transition-colors"><a href="prodotti-alimentari.html#food" class="block">Voce da modificare 2</a></li>
+                  </ul>
+                </div>
 
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative py-2">
+          <a class="px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 hover:text-[#b71029] transition-colors whitespace-nowrap flex items-center gap-1 cursor-pointer" href="attrezzature-horeca.html">
+            Attrezzature Settore Ho.Re.Ca.
+            <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+          </a>
+          <div class="absolute top-[100%] right-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50 w-[600px]">
+            <div class="bg-white dark:bg-slate-800 shadow-2xl border border-gray-200 dark:border-gray-700 p-6 flex gap-8 rounded-b-xl">
+              <div class="flex-1">
+                <img src="banner/macchinari.webp" alt="Macchinari" loading="lazy" decoding="async" class="w-full h-12 object-cover rounded-md mb-1.5 border border-gray-100 dark:border-gray-700">
+                <a href="attrezzature-horeca.html#macchinari"><h3 class="bg-[#b71029] text-white text-[12px] font-bold uppercase px-3 py-1.5 mb-2 rounded-sm hover:bg-[#a30021] transition-colors">Macchinari</h3></a>
+                <ul class="text-[11px] uppercase text-gray-700 dark:text-gray-300 font-medium">
+                  <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] font-bold"><a href="attrezzature-horeca.html#macchinari" class="block">Voce da modificare 1</a></li>
+                  <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576]"><a href="attrezzature-horeca.html#macchinari" class="block">Voce da modificare 2</a></li>
+                  <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576]"><a href="attrezzature-horeca.html#macchinari" class="block">Voce da modificare 3</a></li>
+                </ul>
+              </div>
+              <div class="flex-1">
+                <img src="banner/manutenzione.webp" alt="Servizi Tecnici" loading="lazy" decoding="async" class="w-full h-12 object-cover rounded-md mb-1.5 border border-gray-100 dark:border-gray-700">
+                <a href="attrezzature-horeca.html#servizi-tecnici"><h3 class="bg-[#b71029] text-white text-[12px] font-bold uppercase px-3 py-1.5 mb-2 rounded-sm hover:bg-[#a30021] transition-colors">Servizi Tecnici</h3></a>
+                <ul class="text-[11px] uppercase text-gray-700 dark:text-gray-300 font-medium">
+                  <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] font-bold flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[16px]">build</span>
+                    <a href="attrezzature-horeca.html#servizi-tecnici" class="block">Voce da modificare 1</a>
+                  </li>
+                  <li class="py-1.5 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576]"><a href="attrezzature-horeca.html#servizi-tecnici" class="block">Voce da modificare 2</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative py-2">
+          <a class="px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 hover:text-[#b71029] transition-colors whitespace-nowrap flex items-center gap-1 cursor-pointer" href="industrie.html">
+            Per le Industrie
+            <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+          </a>
+          <div class="absolute top-[100%] right-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50 w-[400px]">
+            <div class="bg-white dark:bg-slate-800 shadow-2xl border border-gray-200 dark:border-gray-700 p-6 rounded-b-xl">
+              <img src="https://placehold.co/400x48/f3f0ef/b71029?text=Img+Settore+Industriale" alt="Settore Industriale" class="w-full h-12 object-cover rounded-md mb-1.5 border border-gray-100 dark:border-gray-700">
+              <h3 class="bg-[#b71029] text-white text-[12px] font-bold uppercase px-3 py-1.5 mb-2 rounded-sm">Settore Industriale</h3>
+              <ul class="text-[11px] uppercase text-gray-700 dark:text-gray-300 font-medium">
+                <li class="py-2 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576] font-bold flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[18px]">inventory_2</span>
+                  <a href="industrie.html#materie-prime" class="block">Materie Prime Alimentari</a>
+                </li>
+                <li class="py-2 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576]"><a href="industrie.html#materie-prime" class="block">Voce da modificare 2</a></li>
+                <li class="py-2 border-b border-gray-100 dark:border-gray-700 last:border-none hover:text-[#b71029] dark:hover:text-[#ff7576]"><a href="industrie.html#materie-prime" class="block">Voce da modificare 3</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <a class="px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 hover:text-[#b71029] transition-colors whitespace-nowrap" href="contatti.html">Contatti</a>
+        <a class="px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 hover:text-[#b71029] transition-colors whitespace-nowrap" href="consulenza.html">Consulenza</a>
+        <a class="px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 hover:text-[#b71029] transition-colors whitespace-nowrap" href="sitoinaggiornamento.html">Lavora con noi</a>
+      </div>
+    </div>
   </nav>
   
-  <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu" class="fixed inset-0 z-[100] bg-surface/98 backdrop-blur-2xl flex flex-col transition-all duration-500 transform translate-y-full opacity-0 invisible overflow-y-auto">
-    <div class="min-h-full flex flex-col items-center justify-center py-16 px-6">
-      <div class="flex flex-col items-center gap-8 w-full max-w-sm text-center">
-        <a href="Gruppo_Bressi_Home.html" class="font-headline font-black text-2xl text-primary hover:scale-105 transition-transform tracking-tighter uppercase whitespace-normal leading-tight">Home</a>
-        
-        <div class="w-12 h-px bg-outline-variant/30"></div>
-        
-        <div class="flex flex-col items-center gap-4 w-full">
-          <span class="font-label text-[10px] font-bold text-on-surface/40 tracking-[0.3em] uppercase">Prodotti</span>
-          <a href="prodotti.html#polveri" class="font-headline font-black text-xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase whitespace-normal leading-tight">Polveri Alimentari</a>
-          <a href="prodotti.html#macchinari" class="font-headline font-black text-xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase whitespace-normal leading-tight">Macchinari Industriali</a>
-        </div>
-        
-        <div class="w-12 h-px bg-outline-variant/30"></div>
-        
-        <a href="contatti.html" class="font-headline font-black text-2xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase whitespace-normal leading-tight">Contatti</a>
-        
-        <div class="w-full h-px bg-outline-variant/10 mt-4"></div>
-        
-        <div class="flex flex-col items-center gap-6 pt-4">
-          <div class="flex gap-8">
-             <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors text-2xl">language</span>
-             <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors text-2xl">share</span>
-             <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors text-2xl">mail</span>
-          </div>
-          <p class="font-body text-[10px] text-outline font-medium tracking-widest uppercase">© 2024 Gruppo Bressi</p>
-        </div>
+  <div id="mobile-menu" class="fixed inset-0 z-[100] bg-surface/98 backdrop-blur-2xl flex flex-col transition-all duration-500 transform translate-y-full opacity-0 invisible overflow-y-auto pt-24 pb-12 px-8">
+    <div class="flex flex-col gap-6 text-left">
+      <a href="index.html" class="font-headline font-black text-3xl text-primary tracking-tighter uppercase">Home</a>
+      <a href="sitoinaggiornamento.html" class="font-headline font-black text-3xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase">Servizi</a>
+      <a href="prodotti-alimentari.html" class="font-headline font-black text-3xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase">Prodotti Alimentari</a>
+      <a href="attrezzature-horeca.html" class="font-headline font-black text-3xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase leading-tight">Attrezzature HO.RE.CA.</a>
+      <a href="industrie.html" class="font-headline font-black text-3xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase">Per le Industrie</a>
+      <a href="contatti.html" class="font-headline font-black text-3xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase">Contatti</a>
+      <a href="consulenza.html" class="font-headline font-black text-3xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase">Consulenza</a>
+      <a href="sitoinaggiornamento.html" class="font-headline font-black text-3xl text-on-surface hover:text-primary transition-colors tracking-tighter uppercase">Lavora con noi</a>
+      
+      <div class="h-px bg-slate-200 dark:bg-slate-800 my-4"></div>
+      
+      <div class="relative">
+        <input type="text" placeholder="Cerca prodotti..." class="w-full bg-slate-100 dark:bg-slate-800 border-transparent rounded-xl py-4 px-6 text-lg focus:ring-primary focus:border-primary" />
+        <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-2xl text-slate-400">search</span>
+      </div>
+      
+      <a href="registrazione.html" class="w-full">
+        <button class="w-full bg-primary text-white font-headline font-black text-xl py-5 rounded-xl shadow-xl active:scale-95 transition-all uppercase tracking-widest mt-2">
+          Registrati
+        </button>
+      </a>
+      
+      <div class="flex justify-center gap-8 pt-8">
+        <span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer transition-colors text-3xl">language</span>
+        <span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer transition-colors text-3xl">share</span>
+        <span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer transition-colors text-3xl">mail</span>
       </div>
     </div>
   </div>
   <!-- Hero Section -->
   <header
-    class="relative min-h-[600px] md:min-h-[750px] flex flex-col justify-center pt-28 md:pt-16 pb-16 lg:pb-32 overflow-hidden bg-surface">
+    class="relative min-h-[100svh] md:min-h-[750px] flex flex-col justify-center pt-40 md:pt-32 pb-16 lg:pb-32 overflow-hidden bg-surface">
     <div class="absolute inset-0 z-0 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/60 to-transparent z-10"></div>
-      <img class="w-full h-full object-cover" data-alt="Close-up of premium food-grade powders being processed in an industrial facility" src="https://s7g10.scene7.com/is/image/tetrapak/powder-scoup-of-powder?wid=384&hei=216&fmt=jpg&resMode=sharp2&qlt=85,0&op_usm=1.75,0.3,2,0"/>
+      <div class="absolute inset-0 bg-gradient-to-b from-surface/90 via-surface/40 to-surface/90 md:hidden z-10"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-transparent z-10 hidden md:block"></div>
+      <img class="w-full h-full object-cover" data-alt="Close-up of premium food-grade powders being processed in an industrial facility" src="./sfondohero.png"/>
     </div>
-    <div class="relative z-20 max-w-[1440px] mx-auto px-4 md:px-8 w-full">
-      <div class="max-w-4xl space-y-8 mt-8">
+
+    <div class="relative z-20 max-w-[1440px] mx-auto px-4 md:px-8 w-full flex flex-col md:flex-row items-center gap-12 lg:gap-16">
+      
+      <div class="w-full md:w-1/2 order-1 md:order-2 flex flex-row md:flex-col justify-center items-center gap-6 md:gap-10">
+        <img 
+          class="w-1/2 md:w-3/4 lg:w-2/3 max-h-32 md:max-h-48 lg:max-h-56 object-contain" 
+          src="logohero1.png" 
+          alt="Lavorazione materie prime" />
+        <img 
+          class="w-1/2 md:w-3/4 lg:w-2/3 max-h-32 md:max-h-48 lg:max-h-56 object-contain" 
+          src="logohero2.png" 
+          alt="Processo industriale" />
+      </div>
+
+      <div class="w-full md:w-1/2 order-2 md:order-1 max-w-4xl space-y-8">
         <h1
-          class="font-headline font-black text-5xl sm:text-6xl md:text-8xl tracking-tighter text-on-surface leading-[0.9] uppercase break-words">
+          class="font-headline font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter text-on-surface leading-[0.9] uppercase break-words">
           Innovazione <br /> <span class="text-primary">In Polvere</span>
         </h1>
         <p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed">
@@ -212,13 +355,13 @@
           gastronomico attraverso macchinari di precisione e polveri di alta qualità.
         </p>
         <div class="flex flex-wrap gap-4 pt-4">
-          <a href="prodotti.html">
+          <a href="prodotti-alimentari.html">
           <button
             class="bg-primary text-on-primary font-headline font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-full hover:bg-primary-dim transition-all shadow-lg shadow-primary/20 active:scale-95">
             Esplora Prodotti
           </button>
           </a>
-          <a href="contatti.html">
+          <a href="consulenza.html">
           <button
             class="border-2 border-gray-300 bg-transparent text-gray-500 font-headline font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-full hover:bg-primary/20 hover:backdrop-blur-sm hover:text-primary hover:border-primary/30 transition-all shadow-sm hover:shadow-lg active:scale-95">
             Consulenza Tecnica
@@ -226,48 +369,74 @@
           </a>
         </div>
       </div>
+
     </div>
-  </header>
-  <!-- Benefits Section -->
-  <section class="py-24 bg-surface-container-low overflow-hidden">
-    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-0">
-      <div class="w-full lg:w-1/2 relative order-2 lg:order-1">
-        <div class="aspect-square md:aspect-[4/3] lg:aspect-[3/2] rounded-r-[20rem] overflow-hidden shadow-2xl bg-surface-container-highest">
-          <img alt="Advanced industrial laboratory for food processing"
-            class="w-full h-full object-cover"
-            src="industrial_advantage_main.png" />
+</header>
+  <section class="h-[100svh] min-h-[600px] flex items-center justify-center bg-white px-4 md:px-8">
+  <div class="relative w-full max-w-[1200px] aspect-[16/8] bg-gradient-to-br from-[#d32f2f] to-[#b71c1c] rounded-2xl shadow-2xl overflow-hidden p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-12">
+
+
+    <div class="w-full lg:w-1/2 space-y-6 flex flex-col justify-between">
+      
+      <div>
+        <div class="inline-block bg-white/10 text-white font-label text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase px-4 py-2 rounded-sm backdrop-blur-sm">
+          Nome Campagna / Serie 2026
         </div>
-      </div>
-      <div class="w-full lg:w-1/2 space-y-16 px-8 md:px-12 lg:pl-24 lg:pr-12 order-1 lg:order-2">
-        <div>
-          <span class="font-label text-sm uppercase text-secondary font-bold tracking-widest block mb-4">Punti di
-            Forza</span>
-          <h2
-            class="font-headline font-black text-5xl md:text-6xl text-on-surface uppercase tracking-tighter leading-none">
-            Il Vantaggio <br /> <span class="text-primary">Gruppo Bressi</span>
+
+        <div class="space-y-1 mt-4">
+          <h2 class="font-headline font-black text-5xl md:text-6xl text-white uppercase tracking-tighter leading-[0.9]">
+            Offerta Del<br>Mese
           </h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div class="space-y-4">
-            <div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center text-secondary">
-              <span class="material-symbols-outlined text-3xl">verified</span>
-            </div>
-            <h4 class="font-headline font-bold text-xl uppercase">Qualità Garantita</h4>
-            <p class="font-body text-on-surface-variant">Protocolli di controllo rigorosi su ogni lotto di polvere e
-              ogni componente meccanica fornita.</p>
-          </div>
-          <div class="space-y-4">
-            <div class="w-12 h-12 bg-tertiary-container rounded-lg flex items-center justify-center text-tertiary">
-              <span class="material-symbols-outlined text-3xl">inventory_2</span>
-            </div>
-            <h4 class="font-headline font-bold text-xl uppercase">Distribuzione di Massa</h4>
-            <p class="font-body text-on-surface-variant">Logistica ottimizzata per forniture industriali su larga scala
-              con tempi di consegna garantiti.</p>
-          </div>
+          <h3 class="font-headline font-black text-4xl md:text-5xl text-[#fff176] uppercase tracking-tighter leading-[0.9]">
+            Sconto XX%
+          </h3>
         </div>
       </div>
+
+      <div class="bg-white/5 backdrop-blur-sm border-l-4 border-[#fff176] p-5 max-w-xl">
+        <span class="font-label text-[10px] text-white/60 font-bold uppercase tracking-widest block mb-1">
+          Prodotto Selezionato
+        </span>
+        <div class="font-headline font-bold text-xl md:text-2xl text-white leading-tight">
+          [Nome del Prodotto o<br>Pacchetto in Evidenza]
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-stretch gap-4 pt-2">
+        
+        <div class="bg-black/30 rounded-xl px-5 py-3 flex items-center gap-3 backdrop-blur-md border border-white/5">
+          <span class="material-symbols-outlined text-[#fff176] text-2xl">timer</span>
+          <div>
+            <span class="font-label text-[9px] text-white/70 font-bold uppercase tracking-widest block mb-1">Scade tra:</span>
+            <div class="font-headline font-black text-lg md:text-xl text-white tracking-widest leading-none">
+              5 Giorni 12:28:20
+            </div>
+          </div>
+        </div>
+
+        <button class="bg-[#fff176] text-on-tertiary-container font-headline font-black uppercase tracking-widest text-sm px-8 rounded-xl hover:bg-[#ffeb3b] transition-colors shadow-lg shadow-black/20 active:scale-95 flex items-center justify-center">
+          Approfitta Ora
+        </button>
+        
+      </div>
     </div>
-  </section>
+    
+    <div class="w-full lg:w-1/2 flex justify-center lg:justify-end h-full">
+      <div class="p-3 md:p-4 rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 w-full max-w-lg aspect-square flex flex-col shadow-2xl h-full">
+        
+        <div class="w-full h-full bg-black/20 rounded-2xl overflow-hidden relative flex items-center justify-center border border-white/5">
+          
+          <div class="text-center opacity-30 p-4">
+            <span class="material-symbols-outlined text-5xl text-white mb-2">hide_image</span>
+            <p class="font-label text-white uppercase tracking-widest text-xs">Spazio Immagine</p>
+          </div>
+
+          </div>
+      </div>
+    </div>
+
+  </div>
+</section>
   <!-- Products -->
   <section class="py-32 bg-surface">
     <div class="max-w-[1440px] mx-auto px-8">
@@ -278,7 +447,7 @@
           <p class="font-body text-xl text-on-surface-variant mt-4">Dalle materie prime alla tecnologia di
             trasformazione: un ecosistema completo per l'industria alimentare.</p>
         </div>
-        <a href="prodotti.html">
+        <a href="prodotti-alimentari.html">
         <button
           class="font-label font-bold text-primary uppercase tracking-widest border-b-2 border-secondary pb-1 flex items-center gap-2 group">
           Tutti i Prodotti
@@ -289,33 +458,33 @@
       <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[500px]">
         <!-- Machine 1 -->
         <div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-2xl bg-surface-container-highest product-card">
-          <div class="w-full h-full relative cursor-none product-image-container">
-            <a href="prodotti.html#macchinari" style="cursor: none;">
-              <img alt="Precision industrial mixer"
+          <div class="w-full h-full relative product-image-container">
+            <a href="attrezzature-horeca.html">
+              <img alt="Esempio Macchinario #1"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsTnw0aScajJhTJc0jGGYW_hNkHjiYP5Mx82zduF1SLIFeVRrsO6_Fs-IgXL1K1lqgRzEQbNqHuOf1BR9SfUsudiUFDBxaMxGnFcu3Jxw8f0Z7eHRBDkpn3P7q8bFpP3Xop8pt6YK34O4QcyJ8UzPdaVzDZpFUWpPTMjSjRb0eJy2NuoK3Hdz7pBAH77FykWiDRDH6qlY5shNz-X7-Oa33gvhZ35z-TS0LN8wT1q6Z9FL3nvu_DZzCO9Jj76zX3wL8WL-EhfEmgZM" />
               <div class="absolute inset-0 bg-gradient-to-t from-on-surface to-transparent opacity-60"></div>
               <div class="absolute bottom-0 left-0 p-10 text-on-primary">
                 <span
-                  class="font-label text-xs uppercase tracking-[0.3em] mb-4 block text-secondary-fixed">Macchinari</span>
-                <h3 class="font-headline font-black text-4xl uppercase mb-2">Miscelatori</h3>
-                <p class="font-body opacity-80 max-w-md">Precisione molecolare nella miscelazione di polveri alimentari
-                  complesse.</p>
+                  class="font-label text-xs uppercase tracking-[0.3em] mb-4 block text-secondary-fixed">ATTREZZATURE HO.RE.CA.</span>
+                <h3 class="font-headline font-black text-4xl uppercase mb-2">Esempio Macchinario #1</h3>
+                <p class="font-body opacity-80 max-w-md">Descrizione.</p>
               </div>
             </a>
           </div>
         </div>
         <!-- Powder 1 (Interactive) -->
         <div class="md:col-span-2 relative group overflow-hidden rounded-2xl bg-secondary-container product-card">
-          <div class="w-full h-full relative cursor-none product-image-container">
-            <a href="prodotti.html#polveri" style="cursor: none;">
-            <img alt="Colored food powders"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-40 mix-blend-multiply"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVdKtS4yKf9Y9ue4pdXDpRUXuJb9NtLqtm6sWB7COm4qR5F-HjNqxaytCtg5TgFSAYwau2Ok8bT9JDN3odnIiVmtq49ikBiYk4dTdojwXWrhDvL7KMguvVQYXlMwZR_-RFTc7uRY4ehJs1aaZ7gpv6McGakUCJIXeEOp_3ibc4sUuzTrOOtWU6oSV0Wf1x0dQzoei10be9RzAEiAztd81fWPWyvNU-jZxTtHXMIkYHT73ZpV400WN0aKKwPBZncE97cvTtpBJo2tM" />
+          <div class="w-full h-full relative product-image-container">
+            <a href="prodotti-alimentari.html">
+             <img alt="Esempio Prodotto #1"
+            class="w-full h-full object-cover grayscale brightness-75 group-hover:scale-110 transition-transform duration-700"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVdKtS4yKf9Y9ue4pdXDpRUXuJb9NtLqtm6sWB7COm4qR5F-HjNqxaytCtg5TgFSAYwau2Ok8bT9JDN3odnIiVmtq49ikBiYk4dTdojwXWrhDvL7KMguvVQYXlMwZR_-RFTc7uRY4ehJs1aaZ7gpv6McGakUCJIXeEOp_3ibc4sUuzTrOOtWU6oSV0Wf1x0dQzoei10be9RzAEiAztd81fWPWyvNU-jZxTtHXMIkYHT73ZpV400WN0aKKwPBZncE97cvTtpBJo2tM" />
+          <div class="absolute inset-0 bg-secondary/20 group-hover:bg-transparent transition-colors"></div>
             <div class="absolute inset-0 flex items-center justify-between px-10 pointer-events-none">
               <div class="max-w-xs">
-                <span class="font-label text-xs uppercase tracking-[0.3em] mb-4 block text-on-secondary-container">Polveri</span>
-                <h3 class="font-headline font-black text-3xl uppercase mb-2 text-on-surface">Estratti Naturali</h3>
+                <span class="font-label text-xs uppercase tracking-[0.3em] mb-4 block text-secondary-fixed">Prodotti alimentari</span>
+                <h3 class="font-headline font-black text-3xl uppercase mb-2 text-on-primary">Esempio Prodotto #1</h3>
               </div>
             </div>
             </a>
@@ -328,7 +497,7 @@
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrhRpU0AjQJBCO6fAGafEf-diTa_oOJ1uoa4AJYPuCsAoNpZgT01hhaLd6H_zMP2SvHmHI_72i1nkoI_eSZYI5X6eATq7T7ToVFll35nfewGx1LlpGdarEUAui-BfWGzE3p1u2VxRKEsF2fHsAQG1q9zR3hBjASvnzBzrvCkJRwrUPZlat40eSdzMw9818KIDYcz7Tg9Tx4Lz9vs5HIN5nBG2AcDt8lK7SMu1_RdpBUuu99JlIrVeSD1hHlPOiO4AvvKJe0MjhpQc" />
           <div class="absolute inset-0 bg-secondary/20 group-hover:bg-transparent transition-colors"></div>
           <div class="absolute bottom-6 left-6 text-on-primary">
-            <h4 class="font-headline font-bold text-lg uppercase">Unità di Packaging</h4>
+            <h4 class="font-headline font-bold text-lg uppercase">Esempio Macchinario #2</h4>
           </div>
         </div>
         <!-- Powder 2 -->
@@ -346,66 +515,142 @@
     </div>
   </section>
   <!-- Company Info & Articles -->
-  <section class="py-24 bg-surface-container-highest">
+<section class="py-24 bg-surface-container-highest">
     <div class="max-w-[1440px] mx-auto px-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
-        <!-- Company Stats -->
         <div class="lg:col-span-1 space-y-12">
           <h2 class="font-headline font-black text-4xl uppercase tracking-tighter text-on-surface">Tradizione <br />
             Industriale</h2>
           <div class="space-y-8">
             <div>
-              <div class="text-6xl font-headline font-black text-primary">25+</div>
+              <div class="text-6xl font-headline font-black text-primary">45+</div>
               <div class="font-label text-sm uppercase font-bold tracking-widest text-on-surface-variant">Anni di
                 Esperienza</div>
             </div>
             <div>
-              <div class="text-6xl font-headline font-black text-secondary">100+</div>
+              <div class="text-6xl font-headline font-black text-secondary">426</div>
               <div class="font-label text-sm uppercase font-bold tracking-widest text-on-surface-variant">Aziende
                 Partner</div>
             </div>
             <div>
-              <div class="text-6xl font-headline font-black">1.2k</div>
+              <div class="text-6xl font-headline font-black">200+</div>
               <div class="font-label text-sm uppercase font-bold tracking-widest text-on-surface-variant">
-                Tonnellate/Anno</div>
+                Spedizioni annue</div>
             </div>
           </div>
         </div>
-        <!-- La Nostra Storia (Timeline) -->
-        <div class="lg:col-span-2">
+        
+        <div class="lg:col-span-2 flex flex-col gap-16">
           <div class="relative pl-8 md:pl-16 border-l-2 border-outline-variant/30 space-y-16">
-            <!-- 1998 -->
             <div class="relative">
               <div class="absolute -left-[33px] md:-left-[72px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-surface ring-8 ring-primary/5"></div>
-              <span class="font-label text-sm font-black text-primary uppercase tracking-widest mb-2 block">1998</span>
               <h4 class="font-headline font-bold text-2xl uppercase mb-3">Le Origini</h4>
               <p class="font-body text-on-surface-variant leading-relaxed max-w-xl">
-                Gruppo Bressi nasce come officina meccanica specializzata a Torino. La visione originale: unire l'eccellenza artigiana italiana alle crescenti necessità dell'industria alimentare moderna.
+                Il Gruppo Bressi affonda le proprie radici in Drinkclear, realtà fondata nel 1982, da cui ha
+                 ereditato competenze, valori e una solida esperienza nel settore.
               </p>
             </div>
-            <!-- 2010 -->
             <div class="relative">
               <div class="absolute -left-[33px] md:-left-[72px] top-0 w-4 h-4 rounded-full bg-secondary border-4 border-surface ring-8 ring-secondary/5"></div>
-              <span class="font-label text-sm font-black text-secondary uppercase tracking-widest mb-2 block">2010</span>
-              <h4 class="font-headline font-bold text-2xl uppercase mb-3">Espansione & Brevetti</h4>
+              <h4 class="font-headline font-bold text-2xl uppercase mb-3">Espansione</h4>
               <p class="font-body text-on-surface-variant leading-relaxed max-w-xl">
-                Inaugurazione del primo centro R&D proprietario. Viene depositato il brevetto per la tecnologia di micronizzazione a freddo, stabilendo nuovi standard di purezza per gli estratti naturali.
-              </p>
+Nel corso degli anni, il Gruppo si è evoluto in una realtà dinamica e innovativa, specializzata nella
+ricerca e sviluppo di prodotti alimentari solubili, infusi e sciroppi, distinguendosi per qualità,
+affidabilità e capacità di innovazione.              </p>
             </div>
-            <!-- 2024 -->
             <div class="relative">
               <div class="absolute -left-[33px] md:-left-[72px] top-0 w-4 h-4 rounded-full bg-on-surface border-4 border-surface ring-8 ring-on-surface/5"></div>
-              <span class="font-label text-sm font-black text-on-surface uppercase tracking-widest mb-2 block">Oggi</span>
-              <h4 class="font-headline font-bold text-2xl uppercase mb-3">Industrial Alchemist</h4>
+              <h4 class="font-headline font-bold text-2xl uppercase mb-3">Oggi</h4>
               <p class="font-body text-on-surface-variant leading-relaxed max-w-xl">
-                Oggi siamo il partner tecnologico di riferimento per i leader globali del settore. Integriamo intelligenza artificiale e processi sostenibili per guidare la rivoluzione alimentare del futuro.
-              </p>
+Fin dalle sue origini, Drinkclear prima e Gruppo Bressi oggi rappresentano un partner strategico
+per le aziende che desiderano proporre sul mercato prodotti a marchio proprio (private label),
+offrendo soluzioni su misura e standard produttivi elevati.              </p>
             </div>
+          </div>
+
+          <div class="flex flex-col gap-6">
+            <div class="flex flex-col md:flex-row bg-surface rounded-2xl p-6 gap-6 items-center border border-outline-variant/20 shadow-sm hover:shadow-md transition-shadow">
+              <img src="./card1.png" alt="Ricerca e Sviluppo" class="w-full md:w-48 h-48 md:h-auto md:aspect-square object-cover rounded-xl shrink-0" />
+              <div>
+                <h4 class="font-headline font-bold text-xl uppercase mb-3 text-primary">Flessibilità e Sviluppo</h4>
+                <p class="font-body text-on-surface-variant leading-relaxed">
+                  La flessibilità operativa e l’attenzione al cliente costituiscono elementi centrali del nostro
+                  approccio: collaboriamo attivamente con i nostri partner nello sviluppo di nuovi prodotti, mettendo
+                  a disposizione il nostro reparto interno di ricerca e sviluppo, per trasformare ogni esigenza in
+                  soluzioni concrete e personalizzate.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row bg-surface rounded-2xl p-6 gap-6 items-center border border-outline-variant/20 shadow-sm hover:shadow-md transition-shadow">
+              <img src="./card2.png" alt="Relazioni e Ascolto" class="w-full md:w-48 h-48 md:h-auto md:aspect-square object-cover rounded-xl shrink-0" />
+              <div>
+                <h4 class="font-headline font-bold text-xl uppercase mb-3 text-secondary">Cura e Competenza</h4>
+                <p class="font-body text-on-surface-variant leading-relaxed">
+                  L’ascolto, la competenza e la cura di ogni fase del processo ci permettono di costruire relazioni
+                  solide e durature, orientate al raggiungimento di risultati che soddisfano pienamente le aspettative
+                  dei nostri clienti.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consulenza Section -->
+<section id="consulenza" class="py-32 relative overflow-hidden bg-gradient-to-br from-red-600 via-orange-500 to-yellow-400">
+  
+  <div class="max-w-[1440px] mx-auto px-8 relative z-10">
+    <div class="max-w-4xl mx-auto bg-white/70 backdrop-blur-xl p-10 md:p-16 rounded-3xl shadow-2xl border border-white/50 text-center space-y-8">
+      
+      <h2 class="font-headline font-black text-5xl md:text-7xl uppercase tracking-tighter text-on-surface">
+        Mostraci <br/> <span class="text-primary">La tua visione</span>
+      </h2>
+      
+      <p class="font-body text-xl text-on-surface-variant leading-relaxed">
+        Siamo pronti a guidarti nella scelta delle migliori materie prime e delle tecnologie più efficienti per la tua produzione.
+      </p>
+      
+      <div class="pt-8">
+        <a href="consulenza.html" class="inline-flex items-center justify-center gap-3 bg-transparent border-2 border-on-surface text-on-surface px-8 py-5 md:px-12 md:py-6 rounded-full font-headline font-black uppercase tracking-widest text-sm md:text-lg hover:bg-on-surface hover:text-on-primary transition-all shadow-xl active:scale-95 group w-full md:w-auto">
+          Richiedi Consulenza Tecnica
+          <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform text-xl md:text-2xl">send</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Lavora con noi Section -->
+  <section id="lavora-con-noi" class="py-32 bg-surface-container-low overflow-hidden">
+    <div class="max-w-[1440px] mx-auto px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-20">
+        <div class="w-full lg:w-1/2">
+          <div class="relative">
+            <div class="aspect-[4/3] rounded-[4rem] overflow-hidden shadow-2xl bg-white/5">
+              <img src="./logohero1.png" class="w-full h-full object-contain p-8" />
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:w-1/2 space-y-8">
+          <h2 class="font-headline font-black text-5xl md:text-6xl text-on-surface uppercase tracking-tighter leading-none">Unisciti al <br/> <span class="text-primary">Team Bressi</span></h2>
+          <p class="font-body text-lg text-on-surface-variant leading-relaxed">Siamo sempre alla ricerca di talenti: ingegneri, tecnologi alimentari ed esperti di logistica per espandere i nostri orizzonti globali.</p>
+          <div class="pt-4">
+            <a href="sitoinaggiornamento.html">
+              <button class="bg-transparent border-2 border-on-surface text-on-surface px-10 py-4 rounded-full font-headline font-bold uppercase tracking-widest text-sm hover:bg-on-surface hover:text-on-primary transition-all active:scale-95">
+                Lavora con noi
+              </button>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
   <!-- FAQ Section (Accordion) -->
   <section class="py-24 bg-surface-container-low">
     <div class="max-w-4xl mx-auto px-8">
@@ -418,12 +663,12 @@
         <!-- FAQ 1 -->
         <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/30 overflow-hidden transition-all duration-300 hover:shadow-xl group">
           <button class="w-full flex items-center justify-between p-8 text-left transition-colors hover:text-primary focus:outline-none faq-toggle" data-faq="1">
-            <span class="font-headline font-bold text-lg uppercase tracking-tight">Quanto tempo richiede una consulenza tecnica?</span>
+            <span class="font-headline font-bold text-lg uppercase tracking-tight">Domanda 1</span>
             <span class="material-symbols-outlined transition-transform duration-300 faq-icon" id="icon-1">expand_more</span>
           </button>
           <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out faq-content" id="content-1">
             <div class="px-8 pb-8 text-on-surface-variant font-body text-base leading-relaxed border-t border-outline-variant/10 pt-4">
-              Solitamente forniamo un primo riscontro tecnico entro 24-48 ore lavorative. Il nostro team analizza la tua richiesta per proporre la soluzione tecnologica più efficiente e competitiva.
+              Risposta 1
             </div>
           </div>
         </div>
@@ -431,12 +676,12 @@
         <!-- FAQ 2 -->
         <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/30 overflow-hidden transition-all duration-300 hover:shadow-xl group">
           <button class="w-full flex items-center justify-between p-8 text-left transition-colors hover:text-primary focus:outline-none faq-toggle" data-faq="2">
-            <span class="font-headline font-bold text-lg uppercase tracking-tight">Spedite i macchinari in tutta Italia?</span>
+            <span class="font-headline font-bold text-lg uppercase tracking-tight">Domanda 2</span>
             <span class="material-symbols-outlined transition-transform duration-300 faq-icon" id="icon-2">expand_more</span>
           </button>
           <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out faq-content" id="content-2">
             <div class="px-8 pb-8 text-on-surface-variant font-body text-base leading-relaxed border-t border-outline-variant/10 pt-4">
-              Sì, offriamo logistica specializzata e installazione in loco su tutto il territorio nazionale ed europeo. Ogni macchinario viene trasportato con protocolli di sicurezza per garantirne l'integrità totale.
+              Risposta 2
             </div>
           </div>
         </div>
@@ -444,12 +689,12 @@
         <!-- FAQ 3 -->
         <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/30 overflow-hidden transition-all duration-300 hover:shadow-xl group">
           <button class="w-full flex items-center justify-between p-8 text-left transition-colors hover:text-primary focus:outline-none faq-toggle" data-faq="3">
-            <span class="font-headline font-bold text-lg uppercase tracking-tight">Le polveri sono certificate?</span>
+            <span class="font-headline font-bold text-lg uppercase tracking-tight">Domanda 3</span>
             <span class="material-symbols-outlined transition-transform duration-300 faq-icon" id="icon-3">expand_more</span>
           </button>
           <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out faq-content" id="content-3">
             <div class="px-8 pb-8 text-on-surface-variant font-body text-base leading-relaxed border-t border-outline-variant/10 pt-4">
-              Assolutamente. Ogni lotto di polveri alimentari ed estratti è accompagnato da schede tecniche dettagliate e certificazioni di conformità HACCP, ISO e regolamenti EU vigenti.
+              Risposta 3
             </div>
           </div>
         </div>
@@ -457,12 +702,12 @@
         <!-- FAQ 4 -->
         <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/30 overflow-hidden transition-all duration-300 hover:shadow-xl group">
           <button class="w-full flex items-center justify-between p-8 text-left transition-colors hover:text-primary focus:outline-none faq-toggle" data-faq="4">
-            <span class="font-headline font-bold text-lg uppercase tracking-tight">È possibile personalizzare le miscele?</span>
+            <span class="font-headline font-bold text-lg uppercase tracking-tight">Domanda 4</span>
             <span class="material-symbols-outlined transition-transform duration-300 faq-icon" id="icon-4">expand_more</span>
           </button>
           <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out faq-content" id="content-4">
             <div class="px-8 pb-8 text-on-surface-variant font-body text-base leading-relaxed border-t border-outline-variant/10 pt-4">
-              Certamente. Il nostro laboratorio R&D lavora a stretto contatto con i clienti per sviluppare formulazioni custom su misura, ottimizzando granulometria e solubilità per specifici processi industriali.
+              Risposta 4
             </div>
           </div>
         </div>
@@ -476,8 +721,9 @@
       <div>
         <div class="font-['Epilogue'] font-bold text-[#b71029] text-2xl mb-4 tracking-tighter uppercase">Gruppo Bressi</div>
         <p class="font-['Work_Sans'] text-sm text-slate-600 dark:text-slate-400 max-w-md mb-6 leading-relaxed">
-          © 2024 Gruppo Bressi. Industrial Alchemy in Food Ingredients. <br />
-          Leader nella fornitura di polveri alimentari e tecnologie per l'industria del food.
+          © 2026 Gruppo Bressi S.R.L. <br />
+          Indirizzo: Stradale Castagnole, 31, 10041 Carignano TO <br />
+          Telefono: 011 1901 1243
         </p>
         <div class="flex gap-4">
           <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">language</span>
@@ -499,7 +745,7 @@
   </footer>
 
   <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/39021234567" class="fixed bottom-8 right-8 z-[100] group flex items-center bg-primary text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:pr-8 active:scale-95" id="whatsapp-fab">
+  <a href="https://wa.me/393883776090" class="fixed bottom-8 right-8 z-[100] group flex items-center bg-primary text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:pr-8 active:scale-95" id="whatsapp-fab">
     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .018 5.396.015 12.03c0 2.12.555 4.189 1.609 6.044L0 24l6.117-1.605A11.758 11.758 0 0012.046 24h.005c6.636 0 12.032-5.396 12.035-12.031a11.785 11.785 0 00-3.41-8.508z"/>
     </svg>
@@ -508,31 +754,8 @@
     </span>
   </a>
 
-  <!-- Custom Floating Cursor -->
-  <div id="custom-cursor" class="fixed pointer-events-none z-[100] w-16 h-16 bg-primary/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 transition-opacity duration-300 transform -translate-x-1/2 -translate-y-1/2">
-    <span class="material-symbols-outlined text-primary text-4xl font-black">add</span>
-  </div>
 
   <script>
-    // Custom Cursor Logic
-    const cursor = document.getElementById('custom-cursor');
-    const imageContainers = document.querySelectorAll('.product-image-container');
-
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    });
-
-    imageContainers.forEach(container => {
-      container.addEventListener('mouseenter', () => {
-        cursor.classList.remove('opacity-0');
-        cursor.classList.add('opacity-100');
-      });
-      container.addEventListener('mouseleave', () => {
-        cursor.classList.remove('opacity-100');
-        cursor.classList.add('opacity-0');
-      });
-    });
 
     // Enhanced Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
